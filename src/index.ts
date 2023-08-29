@@ -1,1 +1,1 @@
-console.log("Essa vaga é minha!")
+import './infra/server';
