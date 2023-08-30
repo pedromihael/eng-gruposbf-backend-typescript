@@ -12,13 +12,9 @@ export class ExchangeRatesAPIAdapter implements IConversionsServiceAdapter {
 
   // todos os serviços devem ter um adaptador que responda por essa assinatura
   // para padronizar as chamadas dentro da fachada
-  public async convertValue({ baseCurrency, value }: GetConversionsRequestBody) {
+  public async convertValue({ baseCurrency = 'BRL', value }: GetConversionsRequestBody) {
     const data = await this.converter.getCurrencies(baseCurrency);
-    const convertTo = ['USD', 'EUR', 'INR', 'BRL'];
-
-    if (!baseCurrency || baseCurrency === 'BRL') {
-      convertTo.pop();
-    }
+    const convertTo = ['USD', 'EUR', 'INR', 'BRL'].filter(c => c !== (baseCurrency));
 
     if (data.result !== 'success') {
       return { success: false, error: 'This external service is down for now.' }

@@ -4,7 +4,7 @@ import { GetConversionsRequestBody } from '../../../../entities/types/get-conver
 export class ConversionMockAPIAdapter implements IConversionsServiceAdapter {
   constructor() {}
 
-  public async convertValue({ baseCurrency, value }: GetConversionsRequestBody) {
+  public async convertValue({ baseCurrency = 'BRL', value }: GetConversionsRequestBody) {
     const data = {
       rates: {
         'USD': 4.87,
@@ -14,7 +14,7 @@ export class ConversionMockAPIAdapter implements IConversionsServiceAdapter {
       }
     }
 
-    const convertTo = ['USD', 'EUR', 'INR', 'BRL'];
+    const convertTo = ['USD', 'EUR', 'INR', 'BRL'].filter(c => c !== (baseCurrency));
     const conversionsMap = {}
 
     convertTo.forEach(currency => {

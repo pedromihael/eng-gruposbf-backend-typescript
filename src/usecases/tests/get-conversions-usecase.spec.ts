@@ -21,8 +21,18 @@ describe('GetConversionsUseCase', () => {
     };
     
     const result = await getConversionsUseCase.execute(body);
+  
+    const expectedResult = {
+      route: "/api/converter",
+      status: 200,
+      response: {
+        EUR: 5264.73,
+        INR: 58.94,
+        USD: 4865.13,
+      },
+    }
 
-    expect(result).not.toBe([]);
+    expect(result).toEqual(expectedResult);
   });
 
   // it('should return an error message if the input to convert is not numerical', async () => {});
