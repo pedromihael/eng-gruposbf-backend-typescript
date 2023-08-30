@@ -1,8 +1,9 @@
+import { IConversionsServiceAdapter } from './conversion-services-adapter.interface';
 import { ExchangeRatesAPI } from '../../../external/services/exchange-rates-api';
 import { GetConversionsRequestBody } from '../../../entities/types/get-conversions-request-body.d'
 
 // TODO: interface para adapters (diferente de interface para fachadas)
-export class ExchangeRatesAPIAdapter {
+export class ExchangeRatesAPIAdapter implements IConversionsServiceAdapter {
   private converter!: ExchangeRatesAPI;
 
   constructor() {

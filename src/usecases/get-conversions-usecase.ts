@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import { autoInjectable, inject } from 'tsyringe';
 import { ResponseBuilder } from '../entities/builders/response-builder';
-import { IConverterServicesFacade } from '../interface-adapters/gateways/facade/converters-facade.interface';
+import { IConversionsServiceFacade } from '../interface-adapters/gateways/facade/converters-facade.interface';
 
-import { Currencies } from '../entities/types/currencies';
+import { Currencies } from '../entities/types/currencies.d';
 import { Response } from '../entities/types/response';
 import { GetConversionsRequestBody } from '../entities/types/get-conversions-request-body.d'
 
@@ -15,7 +15,7 @@ import { GetConversionsRequestBody } from '../entities/types/get-conversions-req
 export class GetConversionsUseCase {
   constructor(
     @inject('ConvertersFacade')
-    private convertersFacade: IConverterServicesFacade,
+    private convertersFacade: IConversionsServiceFacade,
   ) {}
 
   private getConversions({ baseCurrency, value }: GetConversionsRequestBody) {

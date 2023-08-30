@@ -1,4 +1,4 @@
 export type GetConversionsRequestBody = {
-  baseCurrency: string;
+  baseCurrency?: string;
   value: number;
 }
