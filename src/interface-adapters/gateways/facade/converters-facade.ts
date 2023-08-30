@@ -1,6 +1,6 @@
-import { ExchangeRatesAPIAdapter } from '../adapters/ExchangeRatesAPIAdapter';
-import { IConverterServicesFacade } from './IConverterServicesFacade';
-import { GetConversionsRequestBody } from '../../entities/types/GetConversionsRequestBody'
+import { ExchangeRatesAPIAdapter } from '../adapters/exchange-rates-api-adapter';
+import { IConverterServicesFacade } from './converters-facade.interface';
+import { GetConversionsRequestBody } from '../../../entities/types/get-conversions-request-body.d'
 
 export class ConvertersFacade implements IConverterServicesFacade {
   private exchangeRatesAPIadapter: ExchangeRatesAPIAdapter;

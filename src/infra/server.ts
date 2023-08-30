@@ -1,10 +1,10 @@
 import 'reflect-metadata';
-import './injectionContainers/registry';
+import './injection-containers/registry';
 import 'regenerator-runtime/runtime.js';
 import cors from 'cors';
 import express from 'express';
 import bodyParser from 'body-parser';
-import routes from '../controllers/routes';
+import routes from '../interface-adapters/controllers/routes';
 import * as dotenv from 'dotenv';
 
 dotenv.config();

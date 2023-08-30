@@ -1,5 +1,5 @@
-import { ExchangeRatesAPI } from '../../services/ExchangeRatesAPI';
-import { GetConversionsRequestBody } from '../../entities/types/GetConversionsRequestBody'
+import { ExchangeRatesAPI } from '../../../external/services/exchange-rates-api';
+import { GetConversionsRequestBody } from '../../../entities/types/get-conversions-request-body.d'
 
 // TODO: interface para adapters (diferente de interface para fachadas)
 export class ExchangeRatesAPIAdapter {

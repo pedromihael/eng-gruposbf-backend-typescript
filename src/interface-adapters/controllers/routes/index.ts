@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { ConvertCurrencyController } from '../ConvertCurrencyController';
+import { ConvertCurrencyController } from '../convert-currency-controller';
 
 const router = Router();
 
