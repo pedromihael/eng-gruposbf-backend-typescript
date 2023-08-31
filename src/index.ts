@@ -1,1 +1,1 @@
-import './infra/server';
+import './external/infra/server';
