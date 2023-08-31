@@ -17,7 +17,7 @@ export class ExchangeRatesAPIAdapter implements IConversionsServiceAdapter {
     const convertTo = ['USD', 'EUR', 'INR', 'BRL'].filter(c => c !== (baseCurrency));
 
     if (data.result !== 'success') {
-      return { success: false, error: 'This external service is down for now.' }
+      return { success: false, error: data['error-type'] }
     }
 
     const conversionsMap = {}

@@ -7,6 +7,7 @@ import { ConvertersFacade } from '../../interface-adapters/gateways/facade/conve
 let convertersMockAdapter;
 let convertersFacade;
 let getConversionsUseCase;
+const SHOULD_FAIL = true;
 
 describe('GetConversionsUseCase', () => {
   beforeEach(() => {
@@ -16,7 +17,7 @@ describe('GetConversionsUseCase', () => {
   });
 
   it('should return a list of conversions of a given numerical amount', async () => {
-    const body: GetConversionsRequestBody = {
+    const body = {
       value: 999
     };
     
@@ -35,7 +36,92 @@ describe('GetConversionsUseCase', () => {
     expect(result).toEqual(expectedResult);
   });
 
-  // it('should return an error message if the input to convert is not numerical', async () => {});
+  it('should return an error message if the input to convert is not numerical', async () => {
+    const body = {
+      value: "999"
+    };
+    
+    const result = await getConversionsUseCase.execute(body as unknown as GetConversionsRequestBody, SHOULD_FAIL);
   
-  // it('should return an error message if the service is down', async () => {});
+    const expectedResult = {
+      route: "/api/converter",
+      status: 418,
+      response: {
+        message: 'Input value is not a number.'
+      },
+    }
+
+    expect(result).toEqual(expectedResult);
+  });
+  
+  it('should return an error message if the service is down', async () => {
+    const body = {
+      value: 999
+    };
+    
+    const result = await getConversionsUseCase.execute(body, SHOULD_FAIL);
+  
+    const expectedResult = {
+      route: "/api/converter",
+      status: 503,
+      response: {
+        message: 'External Service is down.'
+      },
+    }
+
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('should return an error message if the input body has not `value` field', async () => {
+    const body = {
+      invalid: 'body'
+    };
+    
+    const result = await getConversionsUseCase.execute(body as unknown as GetConversionsRequestBody);
+  
+    const expectedResult = {
+      route: "/api/converter",
+      status: 422,
+      response: {
+        message: 'Invalid request body. Body should contain `value` numerical field. If body contains `baseCurrency` it should be a string.'
+      },
+    }
+
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('should return an error message if the input body has wrong `baseCurrency` field', async () => {
+    const body = {
+      value: 999,
+      baseCurrency: 888
+    };
+    
+    const result = await getConversionsUseCase.execute(body as unknown as GetConversionsRequestBody);
+  
+    const expectedResult = {
+      route: "/api/converter",
+      status: 422,
+      response: {
+        message: 'Invalid request body. Body should contain `value` numerical field. If body contains `baseCurrency` it should be a string.'
+      },
+    }
+
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('should return an error message if the input body has invalid `baseCurrency` field', async () => {
+    const body = {
+      value: 999,
+      baseCurrency: 888
+    };
+    
+    const result = await getConversionsUseCase.execute(body as unknown as GetConversionsRequestBody);
+  
+    const expectedResult = {
+      route: "/api/converter",
+      status: 422,
+    }
+
+    expect(result.status).toEqual(422);
+  });
 });

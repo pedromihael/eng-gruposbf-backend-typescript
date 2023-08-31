@@ -12,17 +12,17 @@ export class ConvertersFacade implements IConversionsServiceFacade {
     private adapters: IConversionsServiceAdapter[],
   ) {}
 
-  public async getConversions({ baseCurrency, value }: GetConversionsRequestBody) {
+  public async getConversions({ baseCurrency, value }: GetConversionsRequestBody, shouldFail?: boolean) {
     let data: any = null;
     let conversions = {
       success: false,
     };
 
-    for(const adapter of this.adapters) {
-      data = await (adapter as IConversionsServiceAdapter).convertValue({ baseCurrency, value });
+    for (const adapter of this.adapters) {
+      data = await (adapter as IConversionsServiceAdapter).convertValue({ baseCurrency, value }, shouldFail);
+      conversions = data; // { success, conversions?, error? }
       
       if (data.success) {
-        conversions = data; // { success, conversions }
         break;
       }
     }
