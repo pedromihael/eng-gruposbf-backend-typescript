@@ -7,6 +7,7 @@ import { Currencies } from '../entities/types/currencies.d';
 import { Response } from '../entities/types/response';
 import { GetConversionsRequestBody } from '../entities/types/get-conversions-request-body.d'
 
+import { constants } from '../entities/constants';
 
 // Receber a fachada como dependência injetada é necessário
 // para respeitar a comunicação entre camadas.
@@ -27,14 +28,14 @@ export class GetConversionsUseCase {
     const responseData = new ResponseBuilder().setRoute('/api/converter');
 
     if (!requestBody || !requestBody?.value || requestBody?.baseCurrency && typeof requestBody?.baseCurrency !== 'string') {
-      responseData.setStatus(422).setResponse({ message: 'Invalid request body. Body should contain `value` numerical field. If body contains `baseCurrency` it should be a string.'});
+      responseData.setStatus(422).setResponse({ message: constants.errors.userErrors.MISSING_VALUE_OR_BASE_CURRENCY });
       return responseData.build();
     }
 
     const { baseCurrency, value } = requestBody;
     
     if(typeof value !== 'number') {
-      responseData.setStatus(418).setResponse({ message: 'Input value is not a number.'});
+      responseData.setStatus(418).setResponse({ message: constants.errors.userErrors.NON_NUMERICAL_VALUE });
       return responseData.build();
     }
     
@@ -48,7 +49,7 @@ export class GetConversionsUseCase {
       // TODO: (melhoria) substituir pelo ultimo array de rates salvo na base (ou cache, se possível)
       // Depois de fazer isso, remover o erro 500
 
-      const message = data.error || 'External Service is down.'
+      const message = data.error || constants.errors.serverErrors.EXTERNAL_SERVICE_DOWN;
 
       responseData.setStatus(503).setResponse({ message });
       return responseData.build();

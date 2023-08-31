@@ -3,6 +3,7 @@ import { ConversionMockAPIAdapter } from '../../interface-adapters/gateways/adap
 import { GetConversionsRequestBody } from '../../entities/types/get-conversions-request-body.d'
 import { GetConversionsUseCase } from '../get-conversions-usecase'
 import { ConvertersFacade } from '../../interface-adapters/gateways/facade/converters-facade'
+import { constants } from '../../entities/constants';
 
 let convertersMockAdapter;
 let convertersFacade;
@@ -47,7 +48,7 @@ describe('GetConversionsUseCase', () => {
       route: "/api/converter",
       status: 418,
       response: {
-        message: 'Input value is not a number.'
+        message: constants.errors.userErrors.NON_NUMERICAL_VALUE
       },
     }
 
@@ -65,7 +66,7 @@ describe('GetConversionsUseCase', () => {
       route: "/api/converter",
       status: 503,
       response: {
-        message: 'External Service is down.'
+        message: constants.errors.serverErrors.EXTERNAL_SERVICE_DOWN,
       },
     }
 
@@ -83,7 +84,7 @@ describe('GetConversionsUseCase', () => {
       route: "/api/converter",
       status: 422,
       response: {
-        message: 'Invalid request body. Body should contain `value` numerical field. If body contains `baseCurrency` it should be a string.'
+        message: constants.errors.userErrors.MISSING_VALUE_OR_BASE_CURRENCY
       },
     }
 
@@ -102,7 +103,7 @@ describe('GetConversionsUseCase', () => {
       route: "/api/converter",
       status: 422,
       response: {
-        message: 'Invalid request body. Body should contain `value` numerical field. If body contains `baseCurrency` it should be a string.'
+        message: constants.errors.userErrors.MISSING_VALUE_OR_BASE_CURRENCY
       },
     }
 
