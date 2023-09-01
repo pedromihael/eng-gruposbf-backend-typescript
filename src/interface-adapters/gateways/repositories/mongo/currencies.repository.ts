@@ -19,6 +19,15 @@ export class CurrenciesMongoRepository implements IRepository<Currency> {
 
     return created;
   }
+
+  async list(): Promise<Currency[] | any[]> {
+    const currencies = await MongoClient.db
+    .collection<Currency>("currencies")
+    .find({})
+    .toArray();
+
+    return currencies;
+  }
 }
 
 // create(body: P): Promise<T | null>;

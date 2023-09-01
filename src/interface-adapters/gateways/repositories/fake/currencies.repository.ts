@@ -10,4 +10,10 @@ export class CurrenciesFakeRepository implements IRepository<Currency> {
       resolve(params);
     })
   }
+
+  async list(): Promise<Currency[] | any[]> {
+    return new Promise((resolve, reject) => {
+      resolve(this.fakeDatabase);
+    })
+  }
 }

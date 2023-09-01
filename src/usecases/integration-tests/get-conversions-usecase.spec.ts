@@ -4,6 +4,12 @@ import { GetConversionsRequestBody } from '../../entities/types/get-conversions-
 import { GetConversionsUseCase } from '../get-conversions-usecase'
 import { ConvertersFacade } from '../../interface-adapters/gateways/facade/converters-facade'
 import { constants } from '../../entities/constants';
+import { CurrenciesFakeRepository } from '../../interface-adapters/gateways/repositories/fake/currencies.repository'
+import { IRepository } from '../../entities/protocols/repository.interface';
+import { Currency } from '../../entities/core/currency';
+
+let createConversionUseCase;
+let fakeRepository: IRepository<Currency>;
 
 let convertersMockAdapter;
 let convertersFacade;
@@ -11,9 +17,12 @@ let getConversionsUseCase;
 const SHOULD_FAIL = true;
 
 describe('GetConversionsUseCase', () => {
+  beforeAll(() => {
+    fakeRepository = new CurrenciesFakeRepository();
+  });
   beforeEach(() => {
     convertersMockAdapter = new ConversionMockAPIAdapter();
-    convertersFacade = new ConvertersFacade([convertersMockAdapter]);
+    convertersFacade = new ConvertersFacade([convertersMockAdapter], fakeRepository);
     getConversionsUseCase = new GetConversionsUseCase(convertersFacade);
   });
 

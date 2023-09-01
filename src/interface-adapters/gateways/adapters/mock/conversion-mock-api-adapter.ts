@@ -1,10 +1,12 @@
 import { IConversionsServiceAdapter } from '../conversion-services-adapter.interface';
 import { GetConversionsRequestBody } from '../../../../entities/types/get-conversions-request-body.d'
+import { IRepository } from '../../../../entities/protocols/repository.interface';
+import { Currency } from '../../../../entities/core/currency';
 
 export class ConversionMockAPIAdapter implements IConversionsServiceAdapter {
   constructor() {}
 
-  public async convertValue({ baseCurrency = 'BRL', value }: GetConversionsRequestBody, shouldFail?: boolean) {
+  public async convertValue({ baseCurrency = 'BRL', value }: GetConversionsRequestBody, repository: IRepository<Currency>, shouldFail?: boolean) {
     if (shouldFail) {
       return this.failOnPurpose();
     }

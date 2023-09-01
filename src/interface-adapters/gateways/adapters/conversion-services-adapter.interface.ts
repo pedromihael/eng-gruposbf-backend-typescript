@@ -1,5 +1,7 @@
 import { GetConversionsRequestBody } from '../../../entities/types/get-conversions-request-body.d'
+import { IRepository } from '../../../entities/protocols/repository.interface';
+import { Currency } from '../../../entities/core/currency';
 
-export interface IConversionsServiceAdapter {
-  convertValue(getConversionsRequestBody: GetConversionsRequestBody, shouldFail?: boolean): any
+export type IConversionsServiceAdapter = {
+  convertValue(getConversionsRequestBody: GetConversionsRequestBody, repository: IRepository<Currency>, shouldFail?: boolean): any
 }
