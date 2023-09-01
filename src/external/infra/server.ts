@@ -2,10 +2,10 @@ import 'reflect-metadata';
 import './injection-containers/registry';
 import 'regenerator-runtime/runtime.js';
 import cors from 'cors';
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import bodyParser from 'body-parser';
 import routes from '../../interface-adapters/controllers/routes';
-import { MongoClient } from "../database/mongo";
+import { MongoClient } from "../../database/mongo";
 import * as dotenv from 'dotenv';
 
 dotenv.config();
