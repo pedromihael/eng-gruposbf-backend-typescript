@@ -3,5 +3,6 @@ import { IRepository } from '../../../entities/protocols/repository.interface';
 import { Currency } from '../../../entities/core/currency';
 
 export type IConversionsServiceAdapter = {
-  convertValue(getConversionsRequestBody: GetConversionsRequestBody, repository: IRepository<Currency>, shouldFail?: boolean): any
+  convertValue(getConversionsRequestBody: GetConversionsRequestBody, repository: IRepository<Currency>, shouldFail?: boolean): Promise<any>
+  getServiceEndpoint(): string
 }

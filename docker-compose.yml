@@ -1,6 +1,29 @@
 version: "3.7"
 services:
-  mongodb_container:
+  currencies_api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c "yarn start:dev"
+    environment:
+      CURRENCIES_API_PORT: 3000
+      MONGODB_USERNAME: root
+      MONGODB_PASSWORD: password
+      MONGODB_URL: "mongodb://mongodb:27017"
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+    ports:
+      - 3000:3000
+    deploy:
+       restart_policy:
+        condition: on-failure
+        max_attempts: 5
+    volumes:
+      - .:/usr/app
+      
+  mongodb:
     image: mongo:latest
     environment:
       MONGO_INITDB_ROOT_USERNAME: root

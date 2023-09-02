@@ -17,6 +17,7 @@ export class ConvertersFacade implements IConversionsServiceFacade {
   ) {}
 
   public async getConversions({ baseCurrency, value }: GetConversionsRequestBody, shouldFail?: boolean) {
+    let serviceEndpoint = '';
     let data: any = null;
     let conversions = {
       success: false,
@@ -27,10 +28,11 @@ export class ConvertersFacade implements IConversionsServiceFacade {
       conversions = data;
       
       if (data.success) {
+        serviceEndpoint = (adapter as IConversionsServiceAdapter).getServiceEndpoint();
         break;
       }
     }
 
-    return conversions;
+    return { conversions, serviceEndpoint };
   }
 }

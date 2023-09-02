@@ -6,6 +6,7 @@ import { Response } from '../entities/types/response';
 import { IRepository } from '../entities/protocols/repository.interface';
 import { constants } from '../entities/constants';
 import { acceptableCurrencies } from './helpers/acceptable-currencies';
+import { consoleLogger, fileLogger } from '../shared/logs/index';
 
 @autoInjectable()
 export class CreateConversionUseCase {
@@ -28,24 +29,49 @@ export class CreateConversionUseCase {
   }
 
   private validateBody(requestBody) {
+    const appendToLogMessage = 'POST /api/create-currency';
+
     if (!requestBody) {
+      const logMessage = `${appendToLogMessage} - Unsuccessful request: ${constants.errors.userErrors.MISSING_REQUEST_BODY}`;
+
+      consoleLogger.error(logMessage)
+      fileLogger.error(logMessage)
+      
       this.responseData.setStatus(400).setResponse({ message: constants.errors.userErrors.MISSING_REQUEST_BODY });
       return false;
     }
 
     if(requestBody) {
       if (typeof requestBody.code !== "string") {
-        this.responseData.setStatus(400).setResponse({ message: `${constants.errors.userErrors.WRONG_PARAM_TYPE}: 'code' expected to be string - received ${typeof requestBody.code}` });
+        const message = `${constants.errors.userErrors.WRONG_PARAM_TYPE}: 'code' expected to be string - received ${typeof requestBody.code}`;
+        const logMessage = `${appendToLogMessage} - Unsuccessful request: ${message}`;
+        
+        consoleLogger.error(logMessage)
+        fileLogger.error(logMessage)
+
+        this.responseData.setStatus(400).setResponse({ message });
         return false;
       }
 
       if (!acceptableCurrencies.includes(requestBody.code)) {
-        this.responseData.setStatus(400).setResponse({ message: constants.errors.userErrors.CODE_NOT_SUPPORTED });
+        const message = constants.errors.userErrors.CODE_NOT_SUPPORTED;
+        const logMessage = `${appendToLogMessage} - Unsuccessful request: ${message}`;
+        
+        consoleLogger.error(logMessage)
+        fileLogger.error(logMessage)
+        
+        this.responseData.setStatus(400).setResponse({ message });
         return false;
       }
 
       if (typeof requestBody.active !== "boolean") {
-        this.responseData.setStatus(400).setResponse({ message: `${constants.errors.userErrors.WRONG_PARAM_TYPE}: 'active' expected to be boolean - received ${typeof requestBody.active}` });
+        const message = `${constants.errors.userErrors.WRONG_PARAM_TYPE}: 'active' expected to be boolean - received ${typeof requestBody.active}`;
+        const logMessage = `${appendToLogMessage} - Unsuccessful request: ${message}`;
+        
+        consoleLogger.error(logMessage)
+        fileLogger.error(logMessage)
+
+        this.responseData.setStatus(400).setResponse({ message });
         return false;
       }
     }

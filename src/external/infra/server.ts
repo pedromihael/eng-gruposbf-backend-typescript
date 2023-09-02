@@ -6,15 +6,18 @@ import express, { Request, Response, NextFunction } from 'express';
 import bodyParser from 'body-parser';
 import routes from '../../interface-adapters/controllers/routes';
 import { MongoClient } from "../../database/mongo";
+import { seedMongoDatabase } from "../../database/mongo/seeds/seed-database";
 import * as dotenv from 'dotenv';
+import { consoleLogger } from '../../shared/logs/index';
 
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.CURRENCIES_API_PORT || 3000;
 const app = express();
 
 async function main() {
   await MongoClient.connect();
+  await seedMongoDatabase();
 
   app.disable('x-powered-by');
   app.use(cors());
@@ -22,7 +25,7 @@ async function main() {
   app.use(routes);
 
   app.listen(PORT, () => {
-    console.log(`Currency Converter API is running on port ${PORT}!`);
+    consoleLogger.info(`Currency Converter API is running on port ${PORT}!`);
   });
 
 }

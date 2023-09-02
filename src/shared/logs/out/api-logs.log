@@ -1,0 +1,14 @@
+[2023-09-02T19:14:23.363Z] [32minfo[39m: Database has received seeds.
+[2023-09-02T19:14:23.442Z] [32minfo[39m: Currency Converter API is running on port 3000!
+[2023-09-02T19:39:57.019Z] [32minfo[39m: IP ::ffff:172.18.0.1 - POST /api/converter - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-02T19:40:22.228Z] [32minfo[39m: IP ::ffff:172.18.0.1 - POST /api/create-currency - BODY {"code":"BOB","active":true}
+[2023-09-02T19:40:24.543Z] [32minfo[39m: IP ::ffff:172.18.0.1 - POST /health-check - BODY {}
+[2023-09-02T21:23:17.856Z] [32minfo[39m: IP ::ffff:172.18.0.1 - POST /health-check - BODY {}
+[2023-09-02T21:23:22.028Z] [32minfo[39m: IP ::ffff:172.18.0.1 - POST /api/converter - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-02T21:23:22.827Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"CAD":145.29,"SEK":1175.07,"AED":393.83,"AWG":191.96,"USD":107.24,"EUR":99.17,"BOB":749.68}
+[2023-09-02T21:32:02.138Z] [32minfo[39m: IP ::ffff:172.18.0.1 - POST /api/create-currency - BODY {"code":"PEDRO","active":true}
+[2023-09-02T21:32:02.139Z] [31merror[39m: Unsuccessful request: ISO currency code not supported. - POST /api/create-currency
+[2023-09-02T21:35:43.728Z] [32minfo[39m: IP ::ffff:172.18.0.1 - POST /api/create-currency - BODY {"code":"PEDRO","active":true}
+[2023-09-02T21:35:43.730Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-02T21:37:41.768Z] [32minfo[39m: POST /api/create-currency - IP ::ffff:172.18.0.1 - BODY {"code":"PEDRO","active":true}
+[2023-09-02T21:37:41.771Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.

@@ -8,6 +8,7 @@ import { Response } from '../entities/types/response';
 import { GetConversionsRequestBody } from '../entities/types/get-conversions-request-body.d'
 
 import { constants } from '../entities/constants';
+import { fileLogger, consoleLogger } from '../shared/logs/index';
 
 // Receber a fachada como dependência injetada é necessário
 // para respeitar a comunicação entre camadas.
@@ -20,8 +21,8 @@ export class GetConversionsUseCase {
   ) {}
 
   private getConversions({ baseCurrency, value }: GetConversionsRequestBody, shouldFail?: boolean) {
-    const conversions = this.convertersFacade.getConversions({ baseCurrency, value }, shouldFail);
-    return conversions;
+    const response = this.convertersFacade.getConversions({ baseCurrency, value }, shouldFail);
+    return response;
   }
 
   async execute(requestBody: GetConversionsRequestBody, shouldFail?: boolean): Promise<Response> {
@@ -39,8 +40,7 @@ export class GetConversionsUseCase {
       return responseData.build();
     }
     
-    const data = await this.getConversions({ baseCurrency, value }, shouldFail);
-    console.log('data', data)
+    const { conversions: data, serviceEndpoint } = await this.getConversions({ baseCurrency, value }, shouldFail);
     
     // Um ponto negativo desse estilo arquitetural é o prop drilling
     // sucessos e insucessos precisam ser notificados de camada em camada pra cima
@@ -51,13 +51,19 @@ export class GetConversionsUseCase {
 
       const message = data.error || constants.errors.serverErrors.EXTERNAL_SERVICE_DOWN;
 
+      consoleLogger.error(message);
+      fileLogger.error(message);
+
       responseData.setStatus(503).setResponse({ message });
       return responseData.build();
     }
 
     const { conversions } = data;
-    responseData.setStatus(200).setResponse(conversions);
 
+    consoleLogger.info(`Conversion successfully done: ${baseCurrency} ${value} in ${serviceEndpoint}`)
+    fileLogger.info(`Conversion successfully done: ${baseCurrency} ${value} in ${serviceEndpoint} -> ${JSON.stringify(conversions)}`)
+    
+    responseData.setStatus(200).setResponse(conversions);
     return responseData.build();
   }
 }

@@ -8,9 +8,11 @@ import { Currency } from '../../../entities/core/currency';
 @autoInjectable()
 export class ExchangeRatesAPIAdapter implements IConversionsServiceAdapter {
   private converter!: ExchangeRatesAPI;
+  private serviceEndpoint: string;
 
   constructor() {
     this.converter = new ExchangeRatesAPI();
+    this.serviceEndpoint = '';
   }
 
   private async getCurrenciesFromDatabase(repository: IRepository<Currency>) {
@@ -20,9 +22,11 @@ export class ExchangeRatesAPIAdapter implements IConversionsServiceAdapter {
     return activeCurrencies.length ? activeCurrencies : ['USD', 'EUR', 'INR', 'BRL'];
   }
 
-  public async convertValue({ baseCurrency = 'BRL', value }: GetConversionsRequestBody, repository: IRepository<Currency>) {
+  public async convertValue({ baseCurrency = 'BRL', value }: GetConversionsRequestBody, repository: IRepository<Currency>): Promise<any> {
     const currencies = await this.getCurrenciesFromDatabase(repository);
-    const data = await this.converter.getCurrencies(baseCurrency);
+    const { data, endpoint } = await this.converter.getCurrencies(baseCurrency);
+
+    this.serviceEndpoint = endpoint;
     
     const convertTo = currencies.filter(c => c !== (baseCurrency));
 
@@ -40,6 +44,10 @@ export class ExchangeRatesAPIAdapter implements IConversionsServiceAdapter {
       success: true,
       conversions: conversionsMap
     }
+  }
+
+  public getServiceEndpoint(): string {
+    return this.serviceEndpoint;
   }
 
 }
