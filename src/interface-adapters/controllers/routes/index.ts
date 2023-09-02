@@ -3,6 +3,7 @@ import { ConvertCurrencyController } from '../convert-currency-controller';
 import { CreateCurrencyController } from '../create-currency-controller';
 import { consoleLogger, fileLogger } from '../../../shared/logs/index';
 import { log } from '../helpers/log';
+import { ListCurrenciesController } from '../list-currencies-controller';
 
 const router = Router();
 
@@ -17,6 +18,13 @@ router.post('/api/create-currency', async (req: Request, res: Response) => {
   log(req, 'POST', '/api/create-currency');
 
   const response = await CreateCurrencyController(req.body);
+  res.status(response.status).send(response);
+});
+
+router.get('/api/list-currencies', async (req: Request, res: Response) => {
+  log(req, 'GET', '/api/list-currencies');
+
+  const response = await ListCurrenciesController();
   res.status(response.status).send(response);
 });
 

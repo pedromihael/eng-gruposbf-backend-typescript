@@ -21,10 +21,15 @@ export class CurrenciesMongoRepository implements IRepository<Currency> {
   }
 
   async list(): Promise<Currency[] | any[]> {
-    const currencies = await MongoClient.db
+    const mongoResponse = await MongoClient.db
     .collection<Currency>("currencies")
     .find({})
     .toArray();
+
+    const currencies = mongoResponse?.map(currency => { 
+      const { _id, ...entry } = currency;
+      return entry;
+     })
 
     return currencies;
   }
