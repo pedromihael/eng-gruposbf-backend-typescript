@@ -10,7 +10,7 @@ import { consoleLogger, fileLogger } from '../shared/logs/index';
 
 @autoInjectable()
 export class ListCurrenciesUseCase {
-  private responseData = new ResponseBuilder().setRoute('/api/list-currencies');
+  private responseData = new ResponseBuilder();
 
   constructor(
     @inject('CurrenciesRepository')

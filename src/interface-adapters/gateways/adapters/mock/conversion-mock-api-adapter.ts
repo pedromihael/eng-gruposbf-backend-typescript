@@ -33,6 +33,10 @@ export class ConversionMockAPIAdapter implements IConversionsServiceAdapter {
     }
   }
 
+  public getServiceEndpoint() {
+    return 'mock';
+  }
+
   private failOnPurpose() {
     return {
       success: false,

@@ -6,18 +6,12 @@ export class ResponseBuilder {
   constructor() {
     this.responseData = {
       status: 500,
-      route: '/',
       response: {},
     };
   }
 
   public setStatus(status: number) {
     this.responseData.status = status;
-    return this;
-  }
-
-  public setRoute(route: string) {
-    this.responseData.route = route;
     return this;
   }
 

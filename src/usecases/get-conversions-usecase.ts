@@ -26,7 +26,7 @@ export class GetConversionsUseCase {
   }
 
   async execute(requestBody: GetConversionsRequestBody, shouldFail?: boolean): Promise<Response> {
-    const responseData = new ResponseBuilder().setRoute('/api/converter');
+    const responseData = new ResponseBuilder();
 
     if (!requestBody || !requestBody?.value || requestBody?.baseCurrency && typeof requestBody?.baseCurrency !== 'string') {
       responseData.setStatus(422).setResponse({ message: constants.errors.userErrors.MISSING_VALUE_OR_BASE_CURRENCY });

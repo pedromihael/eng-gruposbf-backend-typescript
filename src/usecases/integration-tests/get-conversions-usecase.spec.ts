@@ -34,7 +34,6 @@ describe('GetConversionsUseCase', () => {
     const result = await getConversionsUseCase.execute(body);
   
     const expectedResult = {
-      route: "/api/converter",
       status: 200,
       response: {
         EUR: 5264.73,
@@ -54,7 +53,6 @@ describe('GetConversionsUseCase', () => {
     const result = await getConversionsUseCase.execute(body as unknown as GetConversionsRequestBody, SHOULD_FAIL);
   
     const expectedResult = {
-      route: "/api/converter",
       status: 418,
       response: {
         message: constants.errors.userErrors.NON_NUMERICAL_VALUE
@@ -72,7 +70,6 @@ describe('GetConversionsUseCase', () => {
     const result = await getConversionsUseCase.execute(body, SHOULD_FAIL);
   
     const expectedResult = {
-      route: "/api/converter",
       status: 503,
       response: {
         message: constants.errors.serverErrors.EXTERNAL_SERVICE_DOWN,
@@ -90,7 +87,6 @@ describe('GetConversionsUseCase', () => {
     const result = await getConversionsUseCase.execute(body as unknown as GetConversionsRequestBody);
   
     const expectedResult = {
-      route: "/api/converter",
       status: 422,
       response: {
         message: constants.errors.userErrors.MISSING_VALUE_OR_BASE_CURRENCY
@@ -109,7 +105,6 @@ describe('GetConversionsUseCase', () => {
     const result = await getConversionsUseCase.execute(body as unknown as GetConversionsRequestBody);
   
     const expectedResult = {
-      route: "/api/converter",
       status: 422,
       response: {
         message: constants.errors.userErrors.MISSING_VALUE_OR_BASE_CURRENCY
@@ -128,7 +123,6 @@ describe('GetConversionsUseCase', () => {
     const result = await getConversionsUseCase.execute(body as unknown as GetConversionsRequestBody);
   
     const expectedResult = {
-      route: "/api/converter",
       status: 422,
     }
 

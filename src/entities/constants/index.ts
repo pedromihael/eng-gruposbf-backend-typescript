@@ -6,6 +6,8 @@ export const constants = {
       MISSING_REQUEST_BODY: 'Missing request body.',
       CODE_NOT_SUPPORTED: 'ISO currency code not supported.',
       WRONG_PARAM_TYPE: 'Wrong param type',
+      CURRENCY_NOT_FOUND: 'Currency not found',
+      CURRENCY_NOT_UPDATED: 'Currency not updated',
     },
     serverErrors: {
       EXTERNAL_SERVICE_DOWN: 'External Service is down.',

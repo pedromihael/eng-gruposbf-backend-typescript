@@ -18,3 +18,23 @@
 [2023-09-02T21:51:50.759Z] [32minfo[39m: GET /api/list-currencies - response [{"_id":"64f2201ebaa644fce5aceedc","code":"CAD","active":true},{"_id":"64f220d22b72b08bff65a990","code":"SEK","active":true},{"_id":"64f22131bd39210d0328a95c","code":"AED","active":true},{"_id":"64f22178708b1e2ffbba926b","code":"AED","active":true},{"_id":"64f28fb9b884249895e81ec4","code":"AWG","active":true},{"_id":"64f28fb9b884249895e81ec1","code":"BRL","active":true},{"_id":"64f28fb9b884249895e81ec2","code":"USD","active":true},{"_id":"64f28fb9b884249895e81ec3","code":"EUR","active":true},{"_id":"64f38fa62867b685a78a74da","code":"BOB","active":true}]
 [2023-09-02T21:57:23.194Z] [32minfo[39m: GET /api/list-currencies - IP ::ffff:172.18.0.1 - BODY {}
 [2023-09-02T21:57:23.214Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"AED","active":true},{"code":"AED","active":true},{"code":"AWG","active":true},{"code":"BRL","active":true},{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"BOB","active":true}]
+[2023-09-03T05:10:46.153Z] [32minfo[39m: GET /api/list-currencies - IP ::ffff:172.18.0.1 - BODY {}
+[2023-09-03T05:10:46.183Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"AED","active":true},{"code":"AED","active":true},{"code":"AWG","active":true},{"code":"BRL","active":true},{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"BOB","active":true}]
+[2023-09-03T05:11:38.370Z] [32minfo[39m: GET /api/list-currencies - IP ::ffff:172.18.0.1 - BODY {}
+[2023-09-03T05:11:38.413Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"AED","active":true},{"code":"AED","active":true},{"code":"AWG","active":true},{"code":"BRL","active":true},{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"BOB","active":true}]
+[2023-09-03T05:12:34.698Z] [32minfo[39m: PUT /api/update-currency - IP ::ffff:172.18.0.1 - BODY {"code":"CAD","active":false}
+[2023-09-03T05:13:36.904Z] [32minfo[39m: PUT /api/update-currency - IP ::ffff:172.18.0.1 - BODY {"code":"CAD","active":false}
+[2023-09-03T05:13:56.682Z] [32minfo[39m: PUT /api/update-currency - IP ::ffff:172.18.0.1 - BODY {"code":"CAD","active":false}
+[2023-09-03T05:14:35.810Z] [32minfo[39m: PUT /api/update-currency - IP ::ffff:172.18.0.1 - BODY {"code":"CAD","active":false}
+[2023-09-03T05:15:56.198Z] [32minfo[39m: PUT /api/update-currency - IP ::ffff:172.18.0.1 - BODY {"code":"CAD","active":false}
+[2023-09-03T05:16:02.814Z] [32minfo[39m: GET /api/list-currencies - IP ::ffff:172.18.0.1 - BODY {}
+[2023-09-03T05:16:02.845Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":false},{"code":"SEK","active":true},{"code":"AED","active":true},{"code":"AED","active":true},{"code":"AWG","active":true},{"code":"BRL","active":true},{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"BOB","active":true}]
+[2023-09-03T05:30:06.031Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-03T05:30:06.033Z] [31merror[39m: External Service is down.
+[2023-09-03T05:30:06.145Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-03T05:30:23.616Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-03T05:30:23.691Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-03T05:30:23.616Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-03T05:30:23.617Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-03T05:30:23.617Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-03T05:30:23.693Z] [31merror[39m: External Service is down.

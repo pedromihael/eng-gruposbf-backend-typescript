@@ -29,7 +29,6 @@ describe('CreateConversionUseCase', () => {
     const result = await createConversionUseCase.execute(body);
 
     const expectedResult = {
-      route: "/api/create-currency",
       status: 200,
       response: body,
     }
@@ -39,7 +38,6 @@ describe('CreateConversionUseCase', () => {
 
   it('should not create a currency object if body is invalid', async () => {
     const partialExpectedResultObject = {
-      route: "/api/create-currency",
       status: 400,
     }
     

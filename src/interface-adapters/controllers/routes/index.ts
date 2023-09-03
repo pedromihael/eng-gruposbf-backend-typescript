@@ -4,6 +4,7 @@ import { CreateCurrencyController } from '../create-currency-controller';
 import { consoleLogger, fileLogger } from '../../../shared/logs/index';
 import { log } from '../helpers/log';
 import { ListCurrenciesController } from '../list-currencies-controller';
+import { UpdateCurrencyController } from '../update-currency-controller';
 
 const router = Router();
 
@@ -25,6 +26,13 @@ router.get('/api/list-currencies', async (req: Request, res: Response) => {
   log(req, 'GET', '/api/list-currencies');
 
   const response = await ListCurrenciesController();
+  res.status(response.status).send(response);
+});
+
+router.put('/api/update-currency', async (req: Request, res: Response) => {
+  log(req, 'PUT', '/api/update-currency');
+
+  const response = await UpdateCurrencyController(req.body);
   res.status(response.status).send(response);
 });
 
