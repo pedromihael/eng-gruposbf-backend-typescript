@@ -83,3 +83,19 @@
 [2023-09-03T18:09:20.136Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
 [2023-09-03T18:09:37.016Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
 [2023-09-03T18:09:37.018Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-03T18:22:46.295Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-03T18:22:46.295Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-03T18:22:46.296Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-03T18:22:46.296Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-03T18:22:46.466Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T18:22:46.468Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-03T18:22:46.526Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-03T18:22:46.529Z] [31merror[39m: External Service is down.
+[2023-09-03T18:23:45.607Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-03T18:23:45.607Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-03T18:23:45.608Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-03T18:23:45.608Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-03T18:23:45.736Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-03T18:23:45.738Z] [31merror[39m: External Service is down.
+[2023-09-03T18:23:45.795Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T18:23:45.796Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
