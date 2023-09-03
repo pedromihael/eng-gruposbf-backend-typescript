@@ -99,3 +99,7 @@
 [2023-09-03T18:23:45.738Z] [31merror[39m: External Service is down.
 [2023-09-03T18:23:45.795Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
 [2023-09-03T18:23:45.796Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-03T20:30:38.658Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T20:30:39.780Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T20:31:05.155Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T20:31:06.697Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
