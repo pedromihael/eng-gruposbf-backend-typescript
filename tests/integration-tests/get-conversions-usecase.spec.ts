@@ -1,12 +1,12 @@
 import 'reflect-metadata';
-import { ConversionMockAPIAdapter } from '../../interface-adapters/gateways/adapters/mock/conversion-mock-api-adapter';
-import { GetConversionsRequestBody } from '../../entities/types/get-conversions-request-body.d'
-import { GetConversionsUseCase } from '../get-conversions-usecase'
-import { ConvertersFacade } from '../../interface-adapters/gateways/facade/converters-facade'
-import { constants } from '../../entities/constants';
-import { CurrenciesFakeRepository } from '../../interface-adapters/gateways/repositories/fake/currencies.repository'
-import { IRepository } from '../../entities/protocols/repository.interface';
-import { Currency } from '../../entities/core/currency';
+import { ConversionMockAPIAdapter } from '../../src/interface-adapters/gateways/adapters/mock/conversion-mock-api-adapter';
+import { GetConversionsRequestBody } from '../../src/entities/types/get-conversions-request-body';
+import { GetConversionsUseCase } from '../../src/usecases/get-conversions-usecase';
+import { ConvertersFacade } from '../../src/interface-adapters/gateways/facade/converters-facade';
+import { constants } from '../../src/entities/constants/index';
+import { CurrenciesFakeRepository } from '../../src/interface-adapters/gateways/repositories/fake/currencies.repository';
+import { IRepository } from '../../src/entities/protocols/repository.interface';
+import { Currency } from '../../src/entities/core/currency';
 
 let CreateCurrencyUseCase;
 let fakeRepository: IRepository<Currency>;

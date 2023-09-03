@@ -18,7 +18,14 @@ export class ListCurrenciesUseCase {
   ) {}
 
   async execute(): Promise<Response> {
-    const response = await this.repository.list();
+    let response = await this.repository.list();
+    if (!response.length) {
+      response = [
+        { code: 'USD', active: true },
+        { code: 'EUR', active: true },
+        { code: 'INR', active: true },
+      ]
+    }
     this.responseData.setStatus(200).setResponse(response);
 
     consoleLogger.info(`GET /api/list-currencies - response ${JSON.stringify(response)}`);

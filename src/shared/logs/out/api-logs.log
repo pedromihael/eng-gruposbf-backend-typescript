@@ -65,3 +65,21 @@
 [2023-09-03T05:38:09.349Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"null":null,"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
 [2023-09-03T05:39:14.839Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
 [2023-09-03T05:39:15.090Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T17:52:53.533Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-03T17:52:53.536Z] [31merror[39m: External Service is down.
+[2023-09-03T17:53:20.642Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-03T17:53:20.644Z] [31merror[39m: External Service is down.
+[2023-09-03T17:53:36.011Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-03T17:53:36.013Z] [31merror[39m: External Service is down.
+[2023-09-03T17:53:36.270Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-03T17:53:36.270Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-03T17:53:36.270Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-03T17:53:36.271Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-03T18:04:59.391Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T18:05:25.049Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T18:05:46.275Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T18:06:15.436Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T18:09:20.134Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T18:09:20.136Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T18:09:37.016Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T18:09:37.018Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]

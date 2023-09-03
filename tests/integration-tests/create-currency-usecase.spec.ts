@@ -1,10 +1,10 @@
 import 'reflect-metadata';
-import { CreateCurrencyUseCase } from '../create-currency-usecase'
-import { CurrenciesFakeRepository } from '../../interface-adapters/gateways/repositories/fake/currencies.repository'
-import { IRepository } from '../../entities/protocols/repository.interface';
-import { Currency } from '../../entities/core/currency';
+import { CreateCurrencyUseCase } from '../../src/usecases/create-currency-usecase';
+import { CurrenciesFakeRepository } from '../../src/interface-adapters/gateways/repositories/fake/currencies.repository';
+import { IRepository } from '../../src/entities/protocols/repository.interface';
+import { Currency } from '../../src/entities/core/currency';
+import { constants } from '../../src/entities/constants/index';
 import { uuid } from 'uuidv4';
-import { constants } from '../../entities/constants';
 
 let createCurrencyUseCase;
 let fakeRepository: IRepository<Currency>;
