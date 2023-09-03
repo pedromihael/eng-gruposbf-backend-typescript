@@ -8,7 +8,7 @@ import { CurrenciesFakeRepository } from '../../interface-adapters/gateways/repo
 import { IRepository } from '../../entities/protocols/repository.interface';
 import { Currency } from '../../entities/core/currency';
 
-let createConversionUseCase;
+let CreateCurrencyUseCase;
 let fakeRepository: IRepository<Currency>;
 
 let convertersMockAdapter;

@@ -9,7 +9,7 @@ import { acceptableCurrencies } from './helpers/acceptable-currencies';
 import { consoleLogger, fileLogger } from '../shared/logs/index';
 
 @autoInjectable()
-export class CreateConversionUseCase {
+export class CreateCurrencyUseCase {
   private responseData = new ResponseBuilder();
 
   constructor(

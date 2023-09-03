@@ -17,9 +17,10 @@ export class ExchangeRatesAPIAdapter implements IConversionsServiceAdapter {
 
   private async getCurrenciesFromDatabase(repository: IRepository<Currency>) {
     const currencies = await repository.list();
-    const activeCurrencies = currencies?.map(item => item.active && item.code)
+    const activeCurrencies = currencies?.filter(item => item.active);
+    const codes = activeCurrencies?.map(item => { return item.code });
 
-    return activeCurrencies.length ? activeCurrencies : ['USD', 'EUR', 'INR', 'BRL'];
+    return codes.length ? codes : ['USD', 'EUR', 'INR', 'BRL'];
   }
 
   public async convertValue({ baseCurrency = 'BRL', value }: GetConversionsRequestBody, repository: IRepository<Currency>): Promise<any> {

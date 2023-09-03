@@ -1,21 +1,21 @@
 import 'reflect-metadata';
-import { CreateConversionUseCase } from '../create-conversion-usecase'
+import { CreateCurrencyUseCase } from '../create-currency-usecase'
 import { CurrenciesFakeRepository } from '../../interface-adapters/gateways/repositories/fake/currencies.repository'
 import { IRepository } from '../../entities/protocols/repository.interface';
 import { Currency } from '../../entities/core/currency';
 import { uuid } from 'uuidv4';
 import { constants } from '../../entities/constants';
 
-let createConversionUseCase;
+let createCurrencyUseCase;
 let fakeRepository: IRepository<Currency>;
 
-describe('CreateConversionUseCase', () => {
+describe('CreateCurrencyUseCase', () => {
   beforeAll(() => {
     fakeRepository = new CurrenciesFakeRepository();
   });
 
   beforeEach(() => {
-    createConversionUseCase = new CreateConversionUseCase(fakeRepository);
+    createCurrencyUseCase = new CreateCurrencyUseCase(fakeRepository);
   });
 
   it('should create a currency object if body is valid', async () => {
@@ -26,7 +26,7 @@ describe('CreateConversionUseCase', () => {
       active: true,
     };
     
-    const result = await createConversionUseCase.execute(body);
+    const result = await createCurrencyUseCase.execute(body);
 
     const expectedResult = {
       status: 200,
@@ -76,16 +76,16 @@ describe('CreateConversionUseCase', () => {
       response: { message: `${constants.errors.userErrors.WRONG_PARAM_TYPE}: 'active' expected to be boolean - received string`}
     };
     
-    const result1 = await createConversionUseCase.execute(null);
+    const result1 = await createCurrencyUseCase.execute(null);
     expect(result1).toEqual(expectedResult1);
     
-    const result2 = await createConversionUseCase.execute(body2);
+    const result2 = await createCurrencyUseCase.execute(body2);
     expect(result2).toEqual(expectedResult2);
     
-    const result3 = await createConversionUseCase.execute(body3);
+    const result3 = await createCurrencyUseCase.execute(body3);
     expect(result3).toEqual(expectedResult3);
     
-    const result4 = await createConversionUseCase.execute(body4);
+    const result4 = await createCurrencyUseCase.execute(body4);
     expect(result4).toEqual(expectedResult4);    
   });
   
