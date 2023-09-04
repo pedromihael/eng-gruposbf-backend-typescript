@@ -1,0 +1,197 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+      "version": "1.0.0",
+      "title": "Currencies Converter API - Desafio Node/Typescript Grupo SBF",
+      "description": "A minimal and reliable currency converter",
+      "license": {
+          "name": "MIT",
+          "url": "https://opensource.org/licenses/MIT"
+      }
+  },
+  "tags": [
+      {
+          "name": "Currencies Converter",
+          "description": "API for converting monetary values based off of a stored list of currencies."
+      }
+  ],
+  "consumes": [
+      "application/json"
+  ],
+  "produces": [
+      "application/json"
+  ],
+  "paths": {
+      "/api/converter": {
+          "post": {
+              "tags": [
+                  "Currencies"
+              ],
+              "summary": "Converts a value into other currencies.",
+              "requestBody": {
+                  "description": "Currency object",
+                  "required": true,
+                  "content": {
+                      "application/json": {
+                          "schema": {
+                              "$ref": "#/definitions/ConvertBody"
+                          }
+                      }
+                  }
+              },
+              "produces": [
+                  "application/json"
+              ],
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "schema": {
+                          "$ref": "#/definitions/Conversions"
+                      }
+                  },
+                  "418": {
+                      "description": "Input value is not a number."
+                  },
+                  "422": {
+                      "description": "Failed. Bad post data."
+                  },
+                  "503": {
+                      "description": "Invalid request body. Body should contain `value` numerical field. If body contains `baseCurrency` it should be a string."
+                  }
+              }
+          }
+      },
+      "/api/create-currency": {
+          "post": {
+              "tags": [
+                  "Currencies"
+              ],
+              "summary": "Save a new valid currency to be a conversion target into the database.",
+              "requestBody": {
+                "description": "Currency object",
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/definitions/Currency"
+                        }
+                    }
+                }
+            },
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "schema": {
+                          "$ref": "#/definitions/Currency"
+                      }
+                  },
+                  "404": {
+                      "description": "Missing request body. | Wrong param type |  ISO currency code not supported."
+                  }
+              }
+          }
+      },
+      "/api/list-currencies": {
+        "get": {
+            "tags": [
+                "Currencies"
+            ],
+            "summary": "List all stored currencies.",
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "$ref": "#/definitions/Currencies"
+                    }
+                }
+            }
+        }
+    },
+    "/api/update-currency": {
+        "put": {
+            "tags": [
+                "Currencies"
+            ],
+            "summary": "Update a stored currency.",
+            "requestBody": {
+                "description": "Currency object",
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/definitions/Currency"
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "$ref": "#/definitions/Currency"
+                    }
+                },
+                "400": {
+                    "description": "Currency not updated."
+                },
+                "404": {
+                    "description": "Currency not found."
+                }
+            }
+        }
+    }
+  },
+  "definitions": {
+      "ConvertBody": {
+          "properties": {
+              "value": {
+                  "type": "number"
+              },
+              "baseCurrency": {
+                  "type": "string",
+                  "optional": true
+              }
+          }
+      },
+      "Conversions": {
+          "properties": {
+              "status": {
+                  "type": "number"
+              },
+              "response": {
+                  "$ref": "#/definitions/Conversion"
+              }
+          }
+      },
+      "Conversion": {
+          "type": "object",
+          "properties": {
+              "[currency-code]": {
+                  "type": "number"
+              }
+          }
+      },
+      "Currency": {
+          "type": "object",
+          "properties": {
+              "code": {
+                  "type": "string"
+              },
+              "boolean": {
+                  "type": "boolean"
+              }
+          }
+      },
+      "Currencies": {
+          "type": "object",
+          "properties": {
+              "cats": {
+                  "type": "object",
+                  "additionalProperties": {
+                      "$ref": "#/definitions/Currency"
+                  }
+              }
+          }
+      }
+  }
+}

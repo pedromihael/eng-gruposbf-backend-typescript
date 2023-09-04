@@ -11,7 +11,7 @@ services:
       MONGODB_USERNAME: root
       MONGODB_PASSWORD: password
       MONGODB_URL: mongodb://mongodb:27017
-      REDIS_HOST: redis://redis:6379
+      REDIS_URL: redis://redis:6379
     depends_on:
       - mongodb
       - redis

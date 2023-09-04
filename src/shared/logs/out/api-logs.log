@@ -325,3 +325,16 @@
 [2023-09-04T04:32:22.011Z] [31merror[39m: External Service is down.
 [2023-09-04T04:32:22.101Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
 [2023-09-04T04:32:22.102Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-04T19:58:30.102Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T19:59:56.501Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T19:59:56.534Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-04T19:59:56.963Z] [32minfo[39m: POST /api/converter - Exchange Rates Response: {"SEK":1181.88,"AED":393.65,"AWG":191.87,"USD":107.15,"EUR":99.36,"BOB":742.81,"INR":8862.77}
+[2023-09-04T19:59:57.028Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"SEK":1181.88,"AED":393.65,"AWG":191.87,"USD":107.15,"EUR":99.36,"BOB":742.81,"INR":8862.77}
+[2023-09-04T20:04:45.210Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"code":"string","boolean":true}
+[2023-09-04T20:07:38.508Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":1}
+[2023-09-04T20:07:38.591Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":2.23,"AED":0.74,"AWG":0.36,"USD":0.2,"EUR":0.19,"BOB":1.4,"INR":16.72}
+[2023-09-04T20:07:38.591Z] [32minfo[39m: Conversion successfully done: undefined 1 in In-memory cache -> {"SEK":2.23,"AED":0.74,"AWG":0.36,"USD":0.2,"EUR":0.19,"BOB":1.4,"INR":16.72}
+[2023-09-04T20:24:43.235Z] [32minfo[39m: GET /api/list-currencies - IP ::ffff:172.18.0.1 - BODY {}
+[2023-09-04T20:24:43.249Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":false},{"code":"SEK","active":true},{"code":"AED","active":true},{"code":"AED","active":true},{"code":"AWG","active":true},{"code":"BRL","active":true},{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"BOB","active":true},{"code":"INR","active":true}]
+[2023-09-04T20:24:45.140Z] [32minfo[39m: GET /api/list-currencies - IP ::ffff:172.18.0.1 - BODY {}
+[2023-09-04T20:24:45.148Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":false},{"code":"SEK","active":true},{"code":"AED","active":true},{"code":"AED","active":true},{"code":"AWG","active":true},{"code":"BRL","active":true},{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"BOB","active":true},{"code":"INR","active":true}]
