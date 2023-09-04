@@ -1,7 +1,7 @@
 import { IRepository } from "../../../../entities/protocols/repository.interface";
 import { MongoClient } from "../../../../database/mongo";
-import { Currency } from "../../../../entities/core/currency";
-import { MongoIdCurrency } from "./currency.protocols";
+import { Currency } from '../../../../entities/core/currency';
+import { MongoIdCurrency } from './currency.protocols';
 import { fileLogger, consoleLogger } from '../../../../shared/logs/index';
 import { ObjectId } from 'mongodb';
 
@@ -15,7 +15,7 @@ export class CurrenciesMongoRepository implements IRepository<Currency> {
       return null;
     }
 
-    const created: MongoIdCurrency = await MongoClient.db
+    const created: Currency | null = await MongoClient.db
     .collection<Currency>("currencies")
     .findOne({ _id: insertedId });
 
@@ -46,7 +46,7 @@ export class CurrenciesMongoRepository implements IRepository<Currency> {
       }
     );
 
-    const updated: MongoIdCurrency = await MongoClient.db
+    const updated: any = await MongoClient.db
     .collection<Currency>("currencies")
     .findOne({ _id: new ObjectId(id) });
 
@@ -54,7 +54,7 @@ export class CurrenciesMongoRepository implements IRepository<Currency> {
   }
 
   async findBy(param: string, value: string): Promise<Currency | null> {
-    const found: MongoIdCurrency = await MongoClient.db
+    const found: any = await MongoClient.db
     .collection<Currency>("currencies")
     .findOne({ [param]: value });
 
