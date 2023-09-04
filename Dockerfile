@@ -12,3 +12,5 @@ RUN yarn install
 
 # Copiando o restante dos arquivos
 COPY . .
+
+ENTRYPOINT ["yarn", "start:dev"]
