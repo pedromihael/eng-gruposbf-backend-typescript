@@ -1,4 +1,4 @@
-import { GetConversionsRequestBody } from '../../../entities/types/get-conversions-request-body.d'
+import { GetConversionsRequestBody } from '../../../entities/custom-types/get-conversions-request-body.d'
 import { IRepository } from '../../../entities/protocols/repository.interface';
 
 export interface IConversionsServiceAdapter {

@@ -1,7 +1,7 @@
 import { autoInjectable, inject } from 'tsyringe';
 import { IConversionsServiceAdapter } from '../adapters/conversion-services-adapter.interface';
 import { IConversionsServiceFacade } from './converters-facade.interface';
-import { GetConversionsRequestBody } from '../../../entities/types/get-conversions-request-body.d'
+import { GetConversionsRequestBody } from '../../../entities/custom-types/get-conversions-request-body.d'
 import { Currency } from '../../../entities/core/currency';
 import { IRepository } from '../../../entities/protocols/repository.interface';
 import { RedisCacheAdapter } from '../adapters/redis-cache-adapter';

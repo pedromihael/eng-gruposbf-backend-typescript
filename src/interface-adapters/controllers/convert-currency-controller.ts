@@ -1,6 +1,6 @@
 import { GetConversionsUseCase } from '../../usecases/get-conversions-usecase';
 import { ConvertersFacade } from '../../interface-adapters/gateways/facade/converters-facade';
-import { GetConversionsRequestBody } from '../../entities/types/get-conversions-request-body.d'
+import { GetConversionsRequestBody } from '../../entities/custom-types/get-conversions-request-body.d'
 import { ExchangeRatesAPIAdapter } from '../../interface-adapters/gateways/adapters/exchange-rates-api-adapter';
 import { CurrenciesMongoRepository } from '../gateways/repositories/mongo/currencies.repository';
 import { FixerIOAdapter } from '../gateways/adapters/fixer-io-adapter';

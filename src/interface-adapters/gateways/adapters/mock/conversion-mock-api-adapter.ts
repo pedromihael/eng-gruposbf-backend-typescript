@@ -1,5 +1,5 @@
 import { IConversionsServiceAdapter } from '../conversion-services-adapter.interface';
-import { GetConversionsRequestBody } from '../../../../entities/types/get-conversions-request-body.d'
+import { GetConversionsRequestBody } from '../../../../entities/custom-types/get-conversions-request-body.d'
 import { IRepository } from '../../../../entities/protocols/repository.interface';
 import { Currency } from '../../../../entities/core/currency';
 

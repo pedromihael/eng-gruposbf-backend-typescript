@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { autoInjectable, inject } from 'tsyringe';
 import { ResponseBuilder } from '../entities/builders/response-builder';
 import { Currency } from '../entities/core/currency';
-import { Response } from '../entities/types/response';
+import { Response } from '../entities/custom-types/response';
 import { IRepository } from '../entities/protocols/repository.interface';
 import { constants } from '../entities/constants';
 import { acceptableCurrencies } from './helpers/acceptable-currencies';

@@ -1,6 +1,6 @@
 import { IConversionsServiceAdapter } from './conversion-services-adapter.interface';
 import { FixerIOAPI } from '../../../external/services/fixer-io';
-import { GetConversionsRequestBody } from '../../../entities/types/get-conversions-request-body.d'
+import { GetConversionsRequestBody } from '../../../entities/custom-types/get-conversions-request-body.d'
 import { autoInjectable, inject } from 'tsyringe';
 import { IRepository } from '../../../entities/protocols/repository.interface';
 import { Currency } from '../../../entities/core/currency';

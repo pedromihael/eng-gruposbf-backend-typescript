@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { autoInjectable, inject } from 'tsyringe';
 import { ResponseBuilder } from '../entities/builders/response-builder';
 
-import { Response } from '../entities/types/response';
+import { Response } from '../entities/custom-types/response';
 
 import { constants } from '../entities/constants';
 import { fileLogger, consoleLogger } from '../shared/logs/index';

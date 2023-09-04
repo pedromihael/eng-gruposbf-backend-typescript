@@ -1,4 +1,4 @@
-import { Response } from '../types/response';
+import { Response } from '../custom-types/response';
 
 export class ResponseBuilder {
   private responseData: Response;

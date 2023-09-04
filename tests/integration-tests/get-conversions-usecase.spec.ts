@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { ConversionMockAPIAdapter } from '../../src/interface-adapters/gateways/adapters/mock/conversion-mock-api-adapter';
-import { GetConversionsRequestBody } from '../../src/entities/types/get-conversions-request-body';
+import { GetConversionsRequestBody } from '../../src/entities/custom-types/get-conversions-request-body';
 import { GetConversionsUseCase } from '../../src/usecases/get-conversions-usecase';
 import { ConvertersFacade } from '../../src/interface-adapters/gateways/facade/converters-facade';
 import { constants } from '../../src/entities/constants/index';

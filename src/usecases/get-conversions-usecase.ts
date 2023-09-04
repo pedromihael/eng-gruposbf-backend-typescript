@@ -2,11 +2,11 @@ import 'reflect-metadata';
 import { autoInjectable, inject } from 'tsyringe';
 import { ResponseBuilder } from '../entities/builders/response-builder';
 import { IConversionsServiceFacade } from '../interface-adapters/gateways/facade/converters-facade.interface';
-import { Currencies } from '../entities/types/currencies.d';
-import { GetConversionsRequestBody } from '../entities/types/get-conversions-request-body.d'
+import { Currencies } from '../entities/custom-types/currencies.d';
+import { GetConversionsRequestBody } from '../entities/custom-types/get-conversions-request-body.d'
 import { constants } from '../entities/constants';
 import { fileLogger, consoleLogger } from '../shared/logs/index';
-import { Response } from '../entities/types/response.d';
+import { Response } from '../entities/custom-types/response.d';
 
 // Receber a fachada como dependência injetada é necessário
 // para respeitar a comunicação entre camadas.
