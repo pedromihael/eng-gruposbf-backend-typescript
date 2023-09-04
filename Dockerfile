@@ -14,4 +14,4 @@ COPY --from=build-stage ./usr/app/build ./build
 COPY package* ./
 EXPOSE 3000
 RUN npm install --production
-CMD npm run start:prod
+CMD node ./build/src/index.js
