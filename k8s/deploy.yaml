@@ -8,6 +8,6 @@ metadata:
 spec:
   containers:
     - name: currencies-converter-pod
-      image: pedromihael/currencies-converter-api
+      image: pedromihael/currencies-converter-api:latest
       ports:
         - containerPort: 3000

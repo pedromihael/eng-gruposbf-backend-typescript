@@ -25,9 +25,9 @@ jobs:
         run: |
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - name: Build api docker image
-        run: docker-compose build
+        run: docker build . -t "$DOCKER_USERNAME/$PRODUCT_REPO_NAME:v1"
       - name: Push api service docker image
-        run: docker push "$DOCKER_USERNAME/$PRODUCT_REPO_NAME:latest"
+        run: docker push "$DOCKER_USERNAME/$PRODUCT_REPO_NAME:v1"
 
   deployment:
     needs: [create-image]
