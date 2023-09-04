@@ -5,7 +5,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    command: sh -c "yarn start:dev"
+    command: sh -c "yarn start"
     environment:
       CURRENCIES_API_PORT: 3000
       MONGODB_USERNAME: root
