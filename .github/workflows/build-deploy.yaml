@@ -11,7 +11,7 @@ env:
   PRODUCT_REPO_NAME: ${{secrets.PRODUCT_REPO_NAME}}
 
 jobs:
-  create-images:
+  create-image:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -29,7 +29,7 @@ jobs:
         run: docker push "$DOCKER_USERNAME/$PRODUCT_REPO_NAME:latest"
 
   deployment:
-    needs: [create-images]
+    needs: [create-image]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
