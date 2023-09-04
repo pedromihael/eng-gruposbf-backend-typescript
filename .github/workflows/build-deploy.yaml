@@ -39,6 +39,6 @@ jobs:
           PROJECT_ID: ${{ secrets.PROJECT_ID }}
           APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }} 
-          ZONE_NAME: us-central1-c
+          ZONE_NAME: us-central1
         with:
           args: apply -f packaging/k8s/manifests/ -n prod
