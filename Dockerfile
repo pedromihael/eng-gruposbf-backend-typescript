@@ -1,16 +1,17 @@
-FROM node:16.20.2-alpine
-
-# Diretorio da aplicação dentro do container
+# build stage
+FROM node:16.20.2-alpine as build-stage
 WORKDIR /usr/app
-
-# Copiando o package json e yarn lock para poder instalar as dependencias
 COPY package.json ./
 COPY yarn.lock ./
-
-# Executando a instalação dos pacotes
-RUN yarn install
-
-# Copiando o restante dos arquivos
 COPY . .
+RUN yarn install
+RUN yarn build
 
-ENTRYPOINT ["yarn", "start"]
+# run stage
+FROM node:16.20.2-alpine as production-stage
+WORKDIR /usr/app
+COPY --from=build-stage ./usr/app/build ./build
+COPY package* ./
+EXPOSE 3000
+RUN npm install --production
+CMD npm run start:prod

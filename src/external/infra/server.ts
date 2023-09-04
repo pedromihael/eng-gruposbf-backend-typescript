@@ -1,6 +1,6 @@
 import 'reflect-metadata';
+// import 'regenerator-runtime/runtime.js';
 import './injection-containers/registry';
-import 'regenerator-runtime/runtime.js';
 import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
 import bodyParser from 'body-parser';
@@ -9,6 +9,7 @@ import { MongoClient } from "../../database/mongo";
 import { seedMongoDatabase } from "../../database/mongo/seeds/seed-database";
 import * as dotenv from 'dotenv';
 import { consoleLogger } from '../../shared/logs/index';
+
 
 dotenv.config();
 

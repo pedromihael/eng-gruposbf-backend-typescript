@@ -41,6 +41,7 @@
   },
   "scripts": {
     "start:dev": "npx nodemon",
+    "start:prod": "node build/src/index.js",
     "build": "rimraf ./build && yarn tsc",
     "start": "npm run build && node build/src/index.js",
     "test": "jest"
