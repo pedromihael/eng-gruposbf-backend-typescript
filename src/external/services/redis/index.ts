@@ -14,7 +14,8 @@ export class RedisCacheService {
   private readonly redisClient;
 
   constructor() {
-    this.redisClient = new Redis(process.env.REDIS_HOST||"redis://localhost:6379");
+    this.redisClient = new Redis(process.env.REDIS_URL||"redis://localhost:6379");
+    console.log('redis URL', process.env.REDIS_URL);
   }
 
   private get(key: string) {

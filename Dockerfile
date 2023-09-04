@@ -25,5 +25,8 @@ ENV MONGODB_PASSWORD $mongo_password
 ARG fixer_accesskey
 ENV FIXERIO_ACCESSKEY $fixer_accesskey
 
+ARG redis_url
+ENV REDIS_URL $redis_url
+
 RUN npm install --production
 CMD node ./build/index.js
