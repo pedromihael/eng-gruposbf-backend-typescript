@@ -9,9 +9,6 @@ const defaultConfig = {
       return `[${timestamp}] ${level}: ${message}`;
     })
   ),
-  defaultMeta: {
-    service: "CurrencyConverterAPI",
-  },
 };
 
 export const consoleLogger = createLogger({
