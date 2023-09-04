@@ -4,10 +4,6 @@ WORKDIR /usr/app
 COPY package.json ./
 COPY yarn.lock ./
 COPY . .
-ENV MONGODB_URL $MONGODB_URL
-ENV MONGODB_USERNAME root
-ENV MONGODB_PASSWORD $MONGODB_PASSWORD
-ENV FIXERIO_ACCESSKEY $FIXERIO_ACCESSKEY
 RUN yarn install
 RUN yarn build
 
@@ -17,9 +13,17 @@ WORKDIR /usr/app
 COPY --from=build-stage ./usr/app/build ./build
 COPY package* ./
 EXPOSE 3000
-ENV MONGODB_URL $MONGODB_URL
+
 ENV MONGODB_USERNAME root
-ENV MONGODB_PASSWORD $MONGODB_PASSWORD
-ENV FIXERIO_ACCESSKEY $FIXERIO_ACCESSKEY
+
+ARG mongo_url
+ENV MONGODB_URL $mongo_url
+
+ARG mongo_password
+ENV MONGODB_PASSWORD $mongo_password
+
+ARG fixer_accesskey
+ENV FIXERIO_ACCESSKEY $fixer_accesskey
+
 RUN npm install --production
 CMD node ./build/index.js
