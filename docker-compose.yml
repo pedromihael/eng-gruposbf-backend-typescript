@@ -1,6 +1,7 @@
 version: "3.7"
 services:
   currencies_api:
+    image: pedromihael/currencies-converter-api:latest
     build: 
       context: .
       dockerfile: Dockerfile

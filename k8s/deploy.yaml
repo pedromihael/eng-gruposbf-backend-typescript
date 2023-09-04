@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: currencies-converter-pod
+  labels:
+    name: currencies-converter-pod
+    app: currencies-converter-api
+spec:
+  containers:
+    - name: currencies-converter-pod
+      image: pedromihael/currencies-converter-api
+      ports:
+        - containerPort: 3000
