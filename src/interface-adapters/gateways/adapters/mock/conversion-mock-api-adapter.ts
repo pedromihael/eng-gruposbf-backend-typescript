@@ -4,9 +4,13 @@ import { IRepository } from '../../../../entities/protocols/repository.interface
 import { Currency } from '../../../../entities/core/currency';
 
 export class ConversionMockAPIAdapter implements IConversionsServiceAdapter {
-  constructor() {}
+  private rates: any[];
 
-  public async convertValue({ baseCurrency = 'BRL', value }: GetConversionsRequestBody, repository: IRepository<Currency>, shouldFail?: boolean) {
+  constructor() {
+    this.rates = [];
+  }
+
+  public async convertValue({ baseCurrency = 'BRL', value }: GetConversionsRequestBody, currencies: string[], shouldFail?: boolean) {
     if (shouldFail) {
       return this.failOnPurpose();
     }
@@ -27,6 +31,13 @@ export class ConversionMockAPIAdapter implements IConversionsServiceAdapter {
       Object.assign(conversionsMap, { [currency]: parseFloat((value*data.rates[currency]).toFixed(2)) })
     });
 
+    this.rates = convertTo.map(currency => {
+      return {
+        currency,
+        value: data.rates[currency]
+      }
+    });
+
     return {
       success: true,
       conversions: conversionsMap
@@ -35,6 +46,10 @@ export class ConversionMockAPIAdapter implements IConversionsServiceAdapter {
 
   public getServiceEndpoint() {
     return 'mock';
+  }
+
+  public getRates() {
+    return this.rates;
   }
 
   private failOnPurpose() {

@@ -103,3 +103,120 @@
 [2023-09-03T20:30:39.780Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
 [2023-09-03T20:31:05.155Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
 [2023-09-03T20:31:06.697Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T22:49:02.540Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:02:28.533Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:09:37.959Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:09:37.994Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:10:47.734Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:10:47.761Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:10:48.881Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T23:11:35.391Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:11:35.417Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:12:03.324Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:12:03.385Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:17:24.103Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:17:24.133Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:17:24.619Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.49,"AED":391.08,"AWG":191.65,"USD":106.47,"EUR":98.81,"BOB":739.07,"INR":8807.81}
+[2023-09-03T23:18:11.866Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:18:11.900Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:18:12.336Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.49,"AED":391.08,"AWG":191.65,"USD":106.47,"EUR":98.81,"BOB":739.07,"INR":8807.81}
+[2023-09-03T23:18:53.699Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:18:53.713Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:18:54.139Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.49,"AED":391.08,"AWG":191.65,"USD":106.47,"EUR":98.81,"BOB":739.07,"INR":8807.81}
+[2023-09-03T23:19:56.944Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:19:56.968Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:19:57.381Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.58,"AED":391.08,"AWG":191.65,"USD":106.47,"EUR":98.82,"BOB":739.07,"INR":8807.81}
+[2023-09-03T23:20:52.384Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:20:52.400Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:20:52.843Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.62,"AED":391.08,"AWG":191.65,"USD":106.47,"EUR":98.82,"BOB":739.07,"INR":8807.81}
+[2023-09-03T23:21:23.370Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:21:23.383Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:21:23.861Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.67,"AED":391.08,"AWG":191.65,"USD":106.47,"EUR":98.83,"BOB":739.07,"INR":8807.81}
+[2023-09-03T23:22:08.315Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:22:08.329Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:22:08.829Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.13,"AED":391.02,"AWG":191.65,"USD":106.47,"EUR":98.83,"BOB":739.07,"INR":8807.81}
+[2023-09-03T23:24:53.484Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:24:53.500Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:24:54.060Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.16,"AED":391.08,"AWG":191.65,"USD":106.47,"EUR":98.84,"BOB":739.07,"INR":8807.81}
+[2023-09-03T23:25:04.106Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:25:04.129Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:25:04.628Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.09,"AED":391.08,"AWG":191.65,"USD":106.47,"EUR":98.84,"BOB":739.07,"INR":8807.81}
+[2023-09-03T23:27:14.016Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:27:14.053Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:27:14.479Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.31,"AED":391.08,"AWG":191.65,"USD":106.47,"EUR":98.84,"BOB":739.07,"INR":8807.81}
+[2023-09-03T23:28:18.366Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:28:18.389Z] [31merror[39m: External Service is down.
+[2023-09-03T23:31:07.912Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:31:08.010Z] [31merror[39m: External Service is down.
+[2023-09-03T23:32:01.790Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:32:01.819Z] [31merror[39m: External Service is down.
+[2023-09-03T23:33:28.265Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:33:28.287Z] [31merror[39m: External Service is down.
+[2023-09-03T23:34:54.209Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:34:54.235Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:34:54.868Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.81,"AED":391.08,"AWG":191.65,"USD":106.47,"EUR":98.84,"BOB":739.06,"INR":8804.84}
+[2023-09-03T23:35:07.157Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:35:07.199Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-03T23:35:07.601Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in http://data.fixer.io/api/latest?access_key=4ce1cadee6a45af6f901129835957262 -> {"SEK":1175.73,"AED":391.08,"AWG":191.65,"USD":106.47,"EUR":98.84,"BOB":739.06,"INR":8804.83}
+[2023-09-03T23:35:58.554Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:35:58.575Z] [31merror[39m: External Service is down.
+[2023-09-03T23:36:35.018Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:36:35.042Z] [31merror[39m: External Service is down.
+[2023-09-03T23:37:23.465Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:37:23.496Z] [31merror[39m: External Service is down.
+[2023-09-03T23:39:41.563Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:39:41.600Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":238.5,"AED":720.79,"AWG":1468.07,"USD":2639.35,"EUR":2840.75,"BOB":381.59,"INR":31.8}
+[2023-09-03T23:41:45.922Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:41:45.942Z] [32minfo[39m: POST /api/currency-converter - Cached Response: {"SEK":238.5,"AED":720.79,"AWG":1468.07,"USD":2639.35,"EUR":2840.75,"BOB":381.59,"INR":31.8}
+[2023-09-03T23:41:45.943Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":238.5,"AED":720.79,"AWG":1468.07,"USD":2639.35,"EUR":2840.75,"BOB":381.59,"INR":31.8}
+[2023-09-03T23:45:15.968Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:45:16.007Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":238.5,"AED":720.79,"AWG":1468.07,"USD":2639.35,"EUR":2840.75,"BOB":381.59,"INR":31.8}
+[2023-09-03T23:45:16.007Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":238.5,"AED":720.79,"AWG":1468.07,"USD":2639.35,"EUR":2840.75,"BOB":381.59,"INR":31.8}
+[2023-09-03T23:47:05.214Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:47:05.834Z] [32minfo[39m: POST /api/converter - Exchange Rates Response: {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T23:47:05.838Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T23:49:36.926Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:49:37.499Z] [32minfo[39m: POST /api/converter - Exchange Rates Response: {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T23:49:37.555Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T23:50:06.204Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:50:06.746Z] [32minfo[39m: POST /api/converter - Exchange Rates Response: {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T23:50:06.809Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T23:50:39.552Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-03T23:50:39.570Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T23:50:39.571Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":1175.08,"AED":393.69,"AWG":191.89,"USD":107.2,"EUR":99.11,"BOB":749.66,"INR":8866.75}
+[2023-09-03T23:51:37.941Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-03T23:51:37.941Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-03T23:51:37.941Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-03T23:51:37.942Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-03T23:51:38.241Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T23:51:38.243Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-03T23:52:59.903Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-03T23:52:59.904Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-03T23:52:59.904Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-03T23:52:59.905Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-03T23:53:00.036Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T23:53:00.038Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-03T23:53:46.230Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-03T23:53:46.231Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-03T23:53:46.231Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-03T23:53:46.232Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-03T23:53:46.364Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T23:53:46.365Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-03T23:56:28.756Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-03T23:56:28.756Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-03T23:56:28.757Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-03T23:56:28.757Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-03T23:56:28.887Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T23:56:28.889Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-03T23:58:07.598Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T23:58:07.600Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-03T23:58:07.665Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-03T23:58:07.665Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-03T23:58:07.666Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-03T23:58:07.666Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-03T23:59:11.649Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-03T23:59:11.651Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-03T23:59:11.652Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-03T23:59:11.652Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-03T23:59:11.653Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-03T23:59:11.653Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string

@@ -9,11 +9,13 @@ services:
       CURRENCIES_API_PORT: 3000
       MONGODB_USERNAME: root
       MONGODB_PASSWORD: password
-      MONGODB_URL: "mongodb://mongodb:27017"
+      MONGODB_URL: mongodb://mongodb:27017
+      REDIS_HOST: redis://redis:6379
     depends_on:
       - mongodb
     links:
       - mongodb
+      - redis
     ports:
       - 3000:3000
     deploy:
@@ -32,6 +34,11 @@ services:
       - 27017:27017
     volumes:
       - mongodb_data_container:/data/db
+  
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
 
 volumes:
   mongodb_data_container:

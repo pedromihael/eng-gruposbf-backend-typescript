@@ -45,10 +45,8 @@ export class GetConversionsUseCase {
     // Um ponto negativo desse estilo arquitetural é o prop drilling
     // sucessos e insucessos precisam ser notificados de camada em camada pra cima
     // até que os controllers saibam do resultado
+    
     if(!data.success) {
-      // TODO: (melhoria) substituir pelo ultimo array de rates salvo na base (ou cache, se possível)
-      // Depois de fazer isso, remover o erro 500
-
       const message = data.error || constants.errors.serverErrors.EXTERNAL_SERVICE_DOWN;
 
       consoleLogger.error(message);

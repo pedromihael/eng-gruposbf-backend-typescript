@@ -4,42 +4,42 @@ import { GetConversionsRequestBody } from '../../../entities/types/get-conversio
 import { autoInjectable, inject } from 'tsyringe';
 import { IRepository } from '../../../entities/protocols/repository.interface';
 import { Currency } from '../../../entities/core/currency';
+import { RedisCacheService } from '../../../external/services/redis/index';
 import { fileLogger, consoleLogger } from '../../../shared/logs/index';
 
 @autoInjectable()
-export class ExchangeRatesAPIAdapter implements IConversionsServiceAdapter {
-  private converter!: ExchangeRatesAPI;
+export class RedisCacheAdapter {
+  private redis!: RedisCacheService;
   private serviceEndpoint: string;
-  private rates: any[];
 
   constructor() {
-    this.converter = new ExchangeRatesAPI();
+    this.redis = new RedisCacheService();
     this.serviceEndpoint = '';
-    this.rates = [];
   }
 
   public async convertValue({ baseCurrency = 'BRL', value }: GetConversionsRequestBody, currencies: string[]): Promise<any> {
-    const { data, endpoint } = await this.converter.getCurrencies(baseCurrency);
+    const { data, endpoint } = await this.redis.getCurrencies(currencies);
 
     this.serviceEndpoint = endpoint;
     
     const convertTo = currencies.filter(c => c !== (baseCurrency));
 
-    if (data.result !== 'success') {
-      return { success: false, error: data['error-type'] }
+    if (!data.rates) {
+      const message = 'POST /api/convert-currency - REDIS: No valid entries in cache'
+      
+      fileLogger.info(message);
+      consoleLogger.info(message);
+      
+      return { success: false, error: 'No valid entries in cache.', conversions: [] }
     }
 
-    for (const [key, value] of Object.entries(data.rates)) {
-      this.rates.push({ currency: key, value })
-    }
-    
     const conversionsMap = {}
 
     convertTo.forEach(currency => {
       Object.assign(conversionsMap, { [currency]: parseFloat((value*data.rates[currency]).toFixed(2)) })
     });
 
-    const message = `POST /api/converter - Exchange Rates Response: ${JSON.stringify(conversionsMap)}`
+    const message = `POST /api/converter - Cached Response: ${JSON.stringify(conversionsMap)}`
     fileLogger.info(message);
     consoleLogger.info(message);
 
@@ -53,8 +53,13 @@ export class ExchangeRatesAPIAdapter implements IConversionsServiceAdapter {
     return this.serviceEndpoint;
   }
 
-  public getRates() {
-    return this.rates;
+  public async cacheRates(rates): Promise<void> {
+    const updatedAt = new Date().toISOString();
+
+    for (const rate of rates) {
+      await this.redis.setPair(`${rate.currency}-rate`, `${rate.value}`);
+      await this.redis.setPair(`${rate.currency}-updatedAt`, updatedAt);
+    }
   }
 
 }

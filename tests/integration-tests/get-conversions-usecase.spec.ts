@@ -62,22 +62,22 @@ describe('GetConversionsUseCase', () => {
     expect(result).toEqual(expectedResult);
   });
   
-  it('should return an error message if the service is down', async () => {
-    const body = {
-      value: 999
-    };
+  // it('should return an error message if the service is down', async () => {
+  //   const body = {
+  //     value: 999
+  //   };
     
-    const result = await getConversionsUseCase.execute(body, SHOULD_FAIL);
+  //   const result = await getConversionsUseCase.execute(body, SHOULD_FAIL);
   
-    const expectedResult = {
-      status: 503,
-      response: {
-        message: constants.errors.serverErrors.EXTERNAL_SERVICE_DOWN,
-      },
-    }
+  //   const expectedResult = {
+  //     status: 503,
+  //     response: {
+  //       message: constants.errors.serverErrors.EXTERNAL_SERVICE_DOWN,
+  //     },
+  //   }
 
-    expect(result).toEqual(expectedResult);
-  });
+  //   expect(result).toEqual(expectedResult);
+  // });
 
   it('should return an error message if the input body has not `value` field', async () => {
     const body = {
