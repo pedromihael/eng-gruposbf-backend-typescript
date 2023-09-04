@@ -3,10 +3,11 @@
     "target": "es5",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "lib": ["es6"],     
     "experimentalDecorators": true,                                 /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+    "moduleResolution": "node",
 
     /* Modules */
     "module": "commonjs",                                /* Specify what module code is generated. */
-    "rootDir": ".",                                    /* Specify the root folder within your source files. */
+    "rootDir": "src",                                    /* Specify the root folder within your source files. */
     "resolveJsonModule": true,                           /* Enable importing .json files. */
 
     /* JavaScript Support */
@@ -21,5 +22,7 @@
 
     /* Completeness */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/*.spec.ts"]
 }
