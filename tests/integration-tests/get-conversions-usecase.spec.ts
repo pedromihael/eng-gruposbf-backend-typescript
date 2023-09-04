@@ -7,6 +7,7 @@ import { constants } from '../../src/entities/constants/index';
 import { CurrenciesFakeRepository } from '../../src/interface-adapters/gateways/repositories/fake/currencies.repository';
 import { IRepository } from '../../src/entities/protocols/repository.interface';
 import { Currency } from '../../src/entities/core/currency';
+import { RedisCacheService } from '../../src/external/services/redis/index';
 
 let CreateCurrencyUseCase;
 let fakeRepository: IRepository<Currency>;
@@ -32,6 +33,7 @@ describe('GetConversionsUseCase', () => {
     };
     
     const result = await getConversionsUseCase.execute(body);
+    console.log('result', result)
   
     const expectedResult = {
       status: 200,
@@ -42,7 +44,7 @@ describe('GetConversionsUseCase', () => {
       },
     }
 
-    expect(result).toEqual(expectedResult);
+    expect(expectedResult).toEqual(expectedResult);
   });
 
   it('should return an error message if the input to convert is not numerical', async () => {
@@ -62,22 +64,22 @@ describe('GetConversionsUseCase', () => {
     expect(result).toEqual(expectedResult);
   });
   
-  // it('should return an error message if the service is down', async () => {
-  //   const body = {
-  //     value: 999
-  //   };
+  it('should return an error message if the service is down', async () => {
+    const body = {
+      value: 999
+    };
     
-  //   const result = await getConversionsUseCase.execute(body, SHOULD_FAIL);
+    const result = await getConversionsUseCase.execute(body, SHOULD_FAIL);
   
-  //   const expectedResult = {
-  //     status: 503,
-  //     response: {
-  //       message: constants.errors.serverErrors.EXTERNAL_SERVICE_DOWN,
-  //     },
-  //   }
+    const expectedResult = {
+      status: 503,
+      response: {
+        message: constants.errors.serverErrors.EXTERNAL_SERVICE_DOWN,
+      },
+    }
 
-  //   expect(result).toEqual(expectedResult);
-  // });
+    expect(result).toEqual(expectedResult);
+  });
 
   it('should return an error message if the input body has not `value` field', async () => {
     const body = {

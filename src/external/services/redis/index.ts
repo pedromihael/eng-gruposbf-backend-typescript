@@ -26,7 +26,7 @@ export class RedisCacheService {
     const endpoint = 'In-memory cache';
     const response: ResponseParams = {
       success: false,
-      rates: {},
+      rates: null,
     };
 
     for (const currency of currencies) {

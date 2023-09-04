@@ -220,3 +220,92 @@
 [2023-09-03T23:59:11.652Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
 [2023-09-03T23:59:11.653Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
 [2023-09-03T23:59:11.653Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-04T00:50:21.651Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-04T00:50:21.652Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-04T00:50:21.652Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-04T00:50:21.652Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-04T00:50:21.663Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-04T00:50:21.665Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-04T00:55:55.717Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-04T00:55:55.719Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-04T00:55:55.785Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-04T00:55:55.786Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-04T00:55:55.786Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-04T00:55:55.808Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-04T01:01:40.349Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:02:01.111Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:03:18.746Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:04:57.076Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:05:43.909Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:05:43.925Z] [31merror[39m: External Service is down.
+[2023-09-04T01:06:45.578Z] [31merror[39m: External Service is down.
+[2023-09-04T01:07:05.760Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:07:05.777Z] [31merror[39m: External Service is down.
+[2023-09-04T01:13:11.860Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:13:11.873Z] [31merror[39m: External Service is down.
+[2023-09-04T01:15:23.999Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:15:24.011Z] [31merror[39m: External Service is down.
+[2023-09-04T01:31:52.246Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:31:52.260Z] [31merror[39m: External Service is down.
+[2023-09-04T01:36:16.395Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:36:16.409Z] [31merror[39m: External Service is down.
+[2023-09-04T01:36:26.674Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-04T01:36:26.678Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-04T01:36:26.679Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-04T01:36:26.680Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-04T01:36:26.926Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-04T01:36:26.929Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-04T01:36:27.017Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:36:27.023Z] [31merror[39m: External Service is down.
+[2023-09-04T01:38:01.627Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:39:28.119Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:39:28.134Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:39:28.135Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:40:03.907Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:40:03.940Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:40:03.941Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:41:17.937Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:41:17.967Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:41:17.968Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:41:22.834Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:41:22.880Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:41:22.881Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:43:40.002Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:43:40.024Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:43:40.025Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:44:46.104Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:44:46.120Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:44:46.121Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:45:20.864Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:45:20.911Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:45:20.912Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:45:58.200Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:45:58.216Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:45:58.217Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:46:37.665Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:46:37.679Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:46:37.680Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:47:42.001Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:47:42.041Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:47:42.044Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:48:23.494Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:48:23.513Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:48:23.514Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:48:49.492Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:48:49.510Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:48:49.511Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":null,"AED":null,"AWG":null,"USD":null,"EUR":null,"BOB":null,"INR":null}
+[2023-09-04T01:49:28.773Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:49:28.797Z] [32minfo[39m: POST /api/convert-currency - REDIS: No valid entries in cache
+[2023-09-04T01:49:29.571Z] [32minfo[39m: POST /api/converter - Exchange Rates Response: {"SEK":1181.88,"AED":393.65,"AWG":191.87,"USD":107.15,"EUR":99.36,"BOB":742.81,"INR":8862.77}
+[2023-09-04T01:49:29.641Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in https://open.er-api.com/v6/latest/BRL -> {"SEK":1181.88,"AED":393.65,"AWG":191.87,"USD":107.15,"EUR":99.36,"BOB":742.81,"INR":8862.77}
+[2023-09-04T01:49:36.782Z] [32minfo[39m: POST /api/converter - IP ::ffff:172.18.0.1 - BODY {"value":529.99,"baseCurrency":"BRL"}
+[2023-09-04T01:49:36.828Z] [32minfo[39m: POST /api/converter - Cached Response: {"SEK":1181.88,"AED":393.65,"AWG":191.87,"USD":107.15,"EUR":99.36,"BOB":742.81,"INR":8862.77}
+[2023-09-04T01:49:36.830Z] [32minfo[39m: Conversion successfully done: BRL 529.99 in In-memory cache -> {"SEK":1181.88,"AED":393.65,"AWG":191.87,"USD":107.15,"EUR":99.36,"BOB":742.81,"INR":8862.77}
+[2023-09-04T01:50:18.253Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Missing request body.
+[2023-09-04T01:50:18.257Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'code' expected to be string - received number
+[2023-09-04T01:50:18.259Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: ISO currency code not supported.
+[2023-09-04T01:50:18.260Z] [31merror[39m: POST /api/create-currency - Unsuccessful request: Wrong param type: 'active' expected to be boolean - received string
+[2023-09-04T01:50:18.422Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"CAD","active":true},{"code":"SEK","active":true},{"code":"ISK","active":false}]
+[2023-09-04T01:50:18.425Z] [32minfo[39m: GET /api/list-currencies - response [{"code":"USD","active":true},{"code":"EUR","active":true},{"code":"INR","active":true}]
+[2023-09-04T01:50:18.680Z] [32minfo[39m: Conversion successfully done: undefined 999 in mock -> {"USD":4865.13,"EUR":5264.73,"INR":58.94}
+[2023-09-04T01:50:18.683Z] [31merror[39m: External Service is down.

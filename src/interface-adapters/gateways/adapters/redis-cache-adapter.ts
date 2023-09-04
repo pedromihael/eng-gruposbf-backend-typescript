@@ -6,6 +6,7 @@ import { IRepository } from '../../../entities/protocols/repository.interface';
 import { Currency } from '../../../entities/core/currency';
 import { RedisCacheService } from '../../../external/services/redis/index';
 import { fileLogger, consoleLogger } from '../../../shared/logs/index';
+import Redis from "ioredis";
 
 @autoInjectable()
 export class RedisCacheAdapter {
@@ -13,16 +14,15 @@ export class RedisCacheAdapter {
   private serviceEndpoint: string;
 
   constructor() {
-    this.redis = new RedisCacheService();
     this.serviceEndpoint = '';
   }
 
   public async convertValue({ baseCurrency = 'BRL', value }: GetConversionsRequestBody, currencies: string[]): Promise<any> {
-    const { data, endpoint } = await this.redis.getCurrencies(currencies);
-
-    this.serviceEndpoint = endpoint;
+    this.redis = new RedisCacheService();
     
+    const { data, endpoint } = await this.redis.getCurrencies(currencies);
     const convertTo = currencies.filter(c => c !== (baseCurrency));
+    this.serviceEndpoint = endpoint;
 
     if (!data.rates) {
       const message = 'POST /api/convert-currency - REDIS: No valid entries in cache'
@@ -43,6 +43,9 @@ export class RedisCacheAdapter {
     fileLogger.info(message);
     consoleLogger.info(message);
 
+    const redisClient = this.redis.getClient();
+    redisClient.quit();
+
     return {
       success: true,
       conversions: conversionsMap
@@ -54,12 +57,16 @@ export class RedisCacheAdapter {
   }
 
   public async cacheRates(rates): Promise<void> {
+    this.redis = new RedisCacheService();
     const updatedAt = new Date().toISOString();
-
+    
     for (const rate of rates) {
       await this.redis.setPair(`${rate.currency}-rate`, `${rate.value}`);
       await this.redis.setPair(`${rate.currency}-updatedAt`, updatedAt);
     }
+    
+    const redisClient = this.redis.getClient();
+    redisClient.quit();
   }
 
 }

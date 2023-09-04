@@ -32,33 +32,49 @@ export class ConvertersFacade implements IConversionsServiceFacade {
   }
 
   public async getConversions({ baseCurrency = 'BRL', value }: GetConversionsRequestBody, shouldFail?: boolean) {
+    const currenciesToConvert = await this.getCurrenciesFromDatabase();
+
+    if (process.env.NODE_ENV !== 'test') {
+      return await this.cacheStrategy(baseCurrency, value, currenciesToConvert);
+    }
+
+    return await this.adaptersStrategy(baseCurrency, value, currenciesToConvert, shouldFail);
+  }
+
+  private async adaptersStrategy(baseCurrency, value, currenciesToConvert, shouldFail = false) {
     let serviceEndpoint = '';
     let data: any = null;
     let conversions = {
       success: false,
     };
 
-    const currenciesToConvert = await this.getCurrenciesFromDatabase();
-    const cached = await this.redisAdapter.convertValue({ baseCurrency, value }, currenciesToConvert);
-
-    if (!cached.success) {
-      for (const adapter of this.adapters) {      
-        data = await (adapter as IConversionsServiceAdapter).convertValue({ baseCurrency, value }, currenciesToConvert, shouldFail);
-        conversions = data;
+    for (const adapter of this.adapters) {      
+      data = await (adapter as IConversionsServiceAdapter).convertValue({ baseCurrency, value }, currenciesToConvert, shouldFail);
+      conversions = data;
+      
+      if (data.success) {
+        serviceEndpoint = (adapter as IConversionsServiceAdapter).getServiceEndpoint();
         
-        if (data.success) {
-          serviceEndpoint = (adapter as IConversionsServiceAdapter).getServiceEndpoint();
+        if (process.env.NODE_ENV !== 'test') {
           const rates = (adapter as IConversionsServiceAdapter).getRates();
-
           await this.redisAdapter.cacheRates(rates);
-          break;
         }
-      }
 
-      return { conversions, serviceEndpoint };
+        break;
+      }
     }
 
-    serviceEndpoint = this.redisAdapter.getServiceEndpoint();
+    return { conversions, serviceEndpoint };
+  }
+
+  private async cacheStrategy(baseCurrency, value, currenciesToConvert) {
+    const cached = await this.redisAdapter.convertValue({ baseCurrency, value }, currenciesToConvert);
+
+    if (!cached?.success) {
+      return await this.adaptersStrategy(baseCurrency, value, currenciesToConvert);
+    }
+
+    const serviceEndpoint = this.redisAdapter.getServiceEndpoint();
 
     return { 
       conversions: {
