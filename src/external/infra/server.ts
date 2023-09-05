@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import 'regenerator-runtime/runtime.js';
+// import 'regenerator-runtime/runtime.js';
 import './injection-containers/registry';
 import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
