@@ -102,8 +102,11 @@ Sendo assim, a API trata o caso de uso de requisição de conversão de moedas d
 
 #### Comentários adicionais sobre o fluxo de dados
 1. Caso o campo `baseCurrency` não seja informado, o valor será considerado em BRL - Reais.
+
 2. Como comentado, a injeção acontece por dois motivos: a inversão de dependências e, principalmente, a hierarquia de informação pregada pelo estilo arquitetural definido. Fachadas, adaptadores e repositórios são gateways que ligam dados externos ao core da aplicação, portanto estão acima dos casos de uso e abaixo das interfaces com o mundo exterior.
-3. Caso uma única taxa de conversão esteja desatualizada, o caso de uso aciona o primeiro serviço e, em caso de falha, aciona o segundo. O rodízio foi removido com a implementação do cache, mas as estratégias podem ser combinadas. A decisão de remoção da primeira se dá pela complexidade trazida, e que poderia ser evitada. Ao obter as taxas de conversão atualizadas, o cache também é atualizado. 
+
+3. Caso uma única taxa de conversão esteja desatualizada, o caso de uso aciona o primeiro serviço e, em caso de falha, aciona o segundo. O rodízio foi removido com a implementação do cache, mas as estratégias podem ser combinadas. A decisão de remoção da primeira se dá pela complexidade trazida, e que poderia ser evitada. Ao obter as taxas de conversão atualizadas, o cache também é atualizado. As conversões são feitas para as moedas registradas em banco e com propriedate `active` = `true`. Caso não haja nenhuma registrada, as conversões são feitas para USD, EUR e INR.
+
 4. Todas as respostas dos casos de uso têm a mesma estrutura: `status`, um numeral referente ao HTTP Status Code resultante da requisição; e `response`, o objeto de resposta resultante da execução do caso de uso. Os erros e exceções são tratados nos adaptadores e casos de uso, removendo essa responsabilidade dos controladores.
 
 ### Para ajudar com manutenções futuras
