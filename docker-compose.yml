@@ -7,9 +7,9 @@ services:
       dockerfile: dev.dockerfile
     command: sh -c "yarn start:dev"
     environment:
-      MONGODB_USERNAME: root
-      MONGODB_PASSWORD: password
-      MONGODB_URL: mongodb://mongodb:27017
+      MONGO_USERNAME: root
+      MONGO_PASSWORD: password
+      MONGO_URL: mongodb://mongodb:27017
       REDIS_URL: redis://redis:6379
     depends_on:
       - mongodb

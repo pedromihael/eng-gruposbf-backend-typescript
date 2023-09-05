@@ -14,13 +14,13 @@ COPY --from=build-stage ./usr/app/build ./build
 COPY package* ./
 EXPOSE 3000
 
-ENV MONGODB_USERNAME root
+ENV MONGO_USERNAME root
 
 ARG mongo_url
-ENV MONGODB_URL $mongo_url
+ENV MONGO_URL $mongo_url
 
 ARG mongo_password
-ENV MONGODB_PASSWORD $mongo_password
+ENV MONGO_PASSWORD $mongo_password
 
 ARG fixer_accesskey
 ENV FIXERIO_ACCESSKEY $fixer_accesskey

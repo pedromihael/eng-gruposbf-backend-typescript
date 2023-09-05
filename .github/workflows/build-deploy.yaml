@@ -10,8 +10,8 @@ env:
   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
   PRODUCT_REPO_NAME: ${{secrets.PRODUCT_REPO_NAME}}
   SERVICE_FIXER_IO_ACCESS_KEY: ${{secrets.SERVICE_FIXER_IO_ACCESS_KEY}}
-  MONGODB_URL: ${{secrets.MONGODB_URL}}
-  MONGODB_PASSWORD: ${{secrets.MONGODB_PASSWORD}}
+  MONGO_URL: ${{secrets.MONGO_URL}}
+  MONGO_PASSWORD: ${{secrets.MONGO_PASSWORD}}
   REDIS_URL: ${{secrets.REDIS_URL}}
   IMAGE_VERSION: v6
 
@@ -29,7 +29,7 @@ jobs:
         run: |
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - name: Build api docker image
-        run: docker build . -t "$DOCKER_USERNAME/$PRODUCT_REPO_NAME:$IMAGE_VERSION" --build-arg mongo_url=$MONGODB_URL --build-arg mongo_password=$MONGODB_PASSWORD --build-arg fixer_accesskey=$SERVICE_FIXER_IO_ACCESS_KEY --build-arg redis_url=$REDIS_URL
+        run: docker build . -t "$DOCKER_USERNAME/$PRODUCT_REPO_NAME:$IMAGE_VERSION" --build-arg mongo_url=$MONGO_URL --build-arg mongo_password=$MONGO_PASSWORD --build-arg fixer_accesskey=$SERVICE_FIXER_IO_ACCESS_KEY --build-arg redis_url=$REDIS_URL
       - name: Push api service docker image
         run: docker push "$DOCKER_USERNAME/$PRODUCT_REPO_NAME:$IMAGE_VERSION"
 
