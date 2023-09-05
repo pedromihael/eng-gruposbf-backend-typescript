@@ -33,36 +33,17 @@ jobs:
       - name: Push api service docker image
         run: docker push "$DOCKER_USERNAME/$PRODUCT_REPO_NAME:$IMAGE_VERSION"
 
-  # deployment:
-  #   needs: [create-image]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@master
-  #     - name: kubectl - Google Cloud GKE cluster.
-  #       uses: ameydev/gke-kubectl-action@master
-  #       env:
-  #         PROJECT_ID: ${{ secrets.PROJECT_ID }}
-  #         APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-  #         CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }} 
-  #         ZONE_NAME: us-central1
-  #       with:
-  #         args: apply -f k8s/
-
-  deploy-gke:
+  deployment:
     needs: [create-image]
     runs-on: ubuntu-latest
-    env:
-      DEPLOY_ENVIRONMENT: production
     steps:
-      - uses: actions/checkout@v2
-      - uses: jmagnusson/deploy-helm-gke-action@v1
+      - uses: actions/checkout@master
+      - name: kubectl - Google Cloud GKE cluster.
+        uses: ameydev/gke-kubectl-action@master
+        env:
+          PROJECT_ID: ${{ secrets.PROJECT_ID }}
+          APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }} 
+          ZONE_NAME: us-central1
         with:
-          docker-image-repo: $DOCKER_USERNAME/$PRODUCT_REPO_NAME
-          docker-image-tag: ${{ github.sha }}
-          helm-release-name: $PRODUCT_REPO_NAME
-          helm-chart-path: ./charts/$PRODUCT_REPO_NAME
-          helm-vars-folder: ./charts
-          gke-project: ${{ secrets.PROJECT_ID }}
-          gke-cluster: ${{ secrets.CLUSTER_NAME }}
-          gke-zone: us-central1
-          gke-sa-key: ${{ secrets.GKE_SA_KEY }}
+          args: apply -f k8s/
