@@ -7,7 +7,6 @@ services:
       dockerfile: dev.dockerfile
     command: sh -c "yarn start:dev"
     environment:
-      CURRENCIES_API_PORT: 3000
       MONGODB_USERNAME: root
       MONGODB_PASSWORD: password
       MONGODB_URL: mongodb://mongodb:27017
