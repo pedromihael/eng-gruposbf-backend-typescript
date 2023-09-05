@@ -55,6 +55,12 @@ Os testes comportam as possibilidades de execução dos casos de uso da API, int
 #### Swagger
 Mais detalhes sobre os endpoints, seus inputs e outputs, podem ser encontrados acessando a rota `/api-docs` desta mesma API.
 
+### Casos de uso
+1. Converter o valor de uma moeda em outras moedas registradas em banco.
+2. Cadastrar novas moedas em banco.
+3. Atualizar as moedas salvas em banco.
+4. Listar todas as moedas presentes em banco.
+
 ### Tecnologias utilizadas
 * [NodeJS](https://nodejs.org/) Este é um ambiente de execução de plataforma cruzada construído no mecanismo JavaScript V8 do Chrome, usado na execução de códigos JavaScript no servidor. Permite instalação e gerenciamento de dependências e comunicação com bancos de dados.
 
@@ -79,6 +85,10 @@ Para realizar um deploy, altere os arquivos `k8s/deploy.yaml` e `IMAGE_VERSION` 
 
 Faça um `commit` na branch `main` e aguarde a action ser finalizada.
 
+![Implantação](./src/docs/assets/diagrama-request.jpg);
+![Postman](./src/docs/assets/postman_request.png);
+![Logs](./src/docs/assets/railway_logs.png);
+
 ## Implementação
 
 A implementação desta API baseia-se no padrão arquitetural [Layered](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01.html), com modificações baseadas no estilo arquitetural [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), um estilo baseado em conceitos de dois padrões catalogados: [Arquitetura Hexagonal (Ports & Adapters)](https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html#:~:text=Uma%20Arquitetura%20Hexagonal%20divide%20as,tais%20como%20bancos%20de%20dados) e [Onion Architecture](https://www.codeguru.com/csharp/understanding-onion-architecture/). A intenção é comportar o design pattern Repository, responsável por inverter a dependência dos casos de uso para com o banco utilizado através da injeção do repositório referente ao banco utilizado no caso de uso em questão. Dessa forma, os testes de integração envolvendo estes casos de uso também são possíveis, através da utilização de um repositório referente a um banco de dados falso, um [mock](https://pt.wikipedia.org/wiki/Objeto_mock#:~:text=Objetos%20mock%2C%20objetos%20simulados%20ou,o%20comportamento%20de%20outros%20objetos.). Falaremos sobre as decisões arquiteturais na seção a seguir.
@@ -99,6 +109,8 @@ Sendo assim, a API trata o caso de uso de requisição de conversão de moedas d
 2. A rota em questão instancia a classe controller responsável por tratar este caso de uso, a qual faz a injeção tanto a fachada quanto os adaptadores de serviço e o repositório do banco a ser utilizado. 
 3. A este ponto, o corpo da requisição já chegou no caso de uso, a penúltima camada do estilo arquitetural. O caso de uso em questão faz a verificação da presença e dos tipos de dados recebidos, e então verifica se existem dados válidos armazenados no cache, através de um adaptador para este serviço. Se houver, as taxas de conversão armazenadas em cache são retornadas do serviço ao adaptador e então as conversões são feitas e retornadas ao use case. 
 4. Então, o caso de uso retorna a resposta ao controller, que retorna a resposta a rota, expondo-a a origem da requisição. 
+
+![Fluxo de Dados](./src/docs/assets/fluxo-de-dados.jpg);
 
 #### Comentários adicionais sobre o fluxo de dados
 1. Caso o campo `baseCurrency` não seja informado, o valor será considerado em BRL - Reais.

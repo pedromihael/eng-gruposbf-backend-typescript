@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "d9315c32-ccea-422c-b4a7-259e00b2ed5f",
+		"name": "Currency Converter API (Desafio Grupo SBF)",
+		"description": "[https://github.com/pedromihael/currency-converter-api/tree/main]()",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23703685"
+	},
+	"item": [
+		{
+			"name": "local",
+			"item": [
+				{
+					"name": "convert-value",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"value\": 529.99,\n    \"baseCurrency\": \"BRL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/converter",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"converter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-currency",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"INR\",\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/create-currency",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"create-currency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "health-check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/health-check",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"health-check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-currencies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/list-currencies",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"list-currencies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-currency",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"CAD\",\n    \"active\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/update-currency",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"update-currency"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "railway",
+			"item": [
+				{
+					"name": "convert-value",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"value\": 529.99,\n    \"baseCurrency\": \"BRL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{RAILWAY_BASE_URL}}/api/converter",
+							"host": [
+								"{{RAILWAY_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"converter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-currency",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"INR\",\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{RAILWAY_BASE_URL}}/api/create-currency",
+							"host": [
+								"{{RAILWAY_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"create-currency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "health-check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{RAILWAY_BASE_URL}}/health-check",
+							"host": [
+								"{{RAILWAY_BASE_URL}}"
+							],
+							"path": [
+								"health-check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-currencies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{RAILWAY_BASE_URL}}/api/list-currencies",
+							"host": [
+								"{{RAILWAY_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"list-currencies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-currency",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"CAD\",\n    \"active\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{RAILWAY_BASE_URL}}/api/update-currency",
+							"host": [
+								"{{RAILWAY_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"update-currency"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "RAILWAY_BASE_URL",
+			"value": "https://cautious-chalk-production.up.railway.app"
+		}
+	]
+}

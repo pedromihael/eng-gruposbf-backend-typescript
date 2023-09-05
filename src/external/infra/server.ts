@@ -14,7 +14,7 @@ import * as swaggerDocument from '../../docs/swagger/config.json'
 
 dotenv.config();
 
-const PORT = process.env.CURRENCIES_API_PORT || 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 async function main() {

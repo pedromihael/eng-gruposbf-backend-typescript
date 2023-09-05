@@ -39,10 +39,6 @@ export class GetConversionsUseCase {
     }
     
     const { conversions: data, serviceEndpoint } = await this.getConversions({ baseCurrency, value }, shouldFail);
-
-    // Um ponto negativo desse estilo arquitetural é o prop drilling
-    // sucessos e insucessos precisam ser notificados de camada em camada pra cima
-    // até que os controllers saibam do resultado
     
     if(!data.success) {
       const message = data.error || constants.errors.serverErrors.EXTERNAL_SERVICE_DOWN;
